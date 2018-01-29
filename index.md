@@ -2,4 +2,4 @@
 
 ### Did this work?
 
-Let's see!
+It did! Hurrah and huzzah.
