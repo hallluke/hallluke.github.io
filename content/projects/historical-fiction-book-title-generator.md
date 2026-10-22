@@ -1,4 +1,8 @@
-**Historical Fiction Book Title Generator**
+---
+title: "Historical Fiction Book Title Generator"
+date: 2026-10-22
+draft: false
+---
 
 A playful procedural book-title generator inspired by the familiar *The [Occupation] of [Place]* naming convention in historical fiction.
 
