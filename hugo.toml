@@ -1,0 +1,31 @@
+baseURL = "https://hallluke.github.io/"
+languageCode = "en-gb"
+title = "Luke Hall"
+theme = "shibui"
+
+[params]
+  author = "Luke Hall"
+  comments = false
+  showtoc = false
+  showreadingtime = false
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 2
+
+  [[menu.main]]
+    name = "About / CV"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    name = "Links"
+    url = "/links/"
+    weight = 4
