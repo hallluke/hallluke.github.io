@@ -108,3 +108,42 @@ header a:visited {
   font-weight: 400;
   text-transform: uppercase;
 }
+
+
+/* Page layout */
+
+body {
+  background: #e8e9e5 !important;
+  color: #252b27 !important;
+}
+
+/* Header and footer breathing room */
+body > header,
+body > footer {
+  padding: 20px 24px;
+}
+
+/* Main content panel */
+main {
+  box-sizing: border-box;
+  background: #fafaf7 !important;
+  border: 1px solid #c8cdc5;
+  border-radius: 2px;
+  box-shadow: 3px 4px 0 rgba(37, 43, 39, 0.09);
+  padding: 28px 32px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+  body > header,
+  body > footer {
+    padding: 16px;
+  }
+
+  main {
+    padding: 20px 18px;
+    margin-top: 8px;
+  }
+}
