@@ -1,1 +1,30 @@
+/* Personal theme customisations */
 
+/* Initial colour palette */
+:root {
+  --site-background: #f5f3eb;
+  --site-text: #282d27;
+  --site-accent: #607553;
+  --site-border: #c8cebf;
+}
+
+/* Light background and text */
+body {
+  background-color: var(--site-background);
+  color: var(--site-text);
+}
+
+/* Links */
+a {
+  color: var(--site-accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Subtle separators */
+hr {
+  border: 0;
+  border-top: 1px solid var(--site-border);
+}
