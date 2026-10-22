@@ -1,38 +1,52 @@
-/* Personal theme customisations */
 
-/* Colours */
+/* Site colour palette */
 :root {
-  --site-background: #f5f3eb;
-  --site-text: #282d27;
-  --site-accent: #607553;
-  --site-border: #c8cebf;
+  --site-background: #e8e9e5;
+  --site-text: #252b27;
+  --site-accent: #526b46;
+  --site-accent-hover: #354d2d;
+  --site-border: #bfc5ba;
 }
 
-/* Main page */
 html,
 body {
-  background: #f5f3eb !important;
-  color: #282d27 !important;
+  background-color: var(--site-background) !important;
+  color: var(--site-text) !important;
 }
 
-/* Links */
+/* Text throughout the page */
+body,
+main,
+header,
+footer,
+nav,
+p,
+li,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--site-text);
+}
+
+/* Links, including navigation */
 a,
-a:visited {
-  color: #607553 !important;
+a:visited,
+nav a,
+header a {
+  color: var(--site-accent) !important;
 }
 
-/* Link hover */
-a:hover {
-  color: #405337 !important;
+a:hover,
+a:focus-visible,
+nav a:hover,
+header a:hover {
+  color: var(--site-accent-hover) !important;
   text-decoration: underline;
 }
 
-/* Borders and separators */
+/* Separators */
 hr {
   border: 0;
-  border-top: 1px solid #c8cebf;
+  border-top: 1px solid var(--site-border);
 }
-
 
 /* Tamzen bitmap font */
 
