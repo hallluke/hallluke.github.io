@@ -1,6 +1,6 @@
 baseURL = "https://hallluke.github.io/"
 languageCode = "en-gb"
-title = "Luke Hall"
+title = "Luke Hall - Portfolio"
 
 [module]
   [[module.imports]]
@@ -24,7 +24,7 @@ title = "Luke Hall"
     weight = 2
 
   [[menu.main]]
-    name = "About / CV"
+    name = "About"
     url = "/about/"
     weight = 3
 
