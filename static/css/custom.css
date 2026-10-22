@@ -32,3 +32,54 @@ hr {
   border: 0;
   border-top: 1px solid #c8cebf;
 }
+
+
+/* Tamzen bitmap font */
+
+@font-face {
+  font-family: "Tamzen";
+  src: url("/fonts/Tamzen8x16r.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tamzen";
+  src: url("/fonts/Tamzen8x16b.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Headings: compact, uppercase, no oversized titles */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Tamzen", monospace !important;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Header, navigation and interface elements */
+
+header,
+nav,
+footer,
+button,
+label,
+time {
+  font-family: "Tamzen", monospace !important;
+  font-size: 16px;
+}
+
+/* Keep long-form content easy to read */
+
+main p,
+main li {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
