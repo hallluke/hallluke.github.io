@@ -1,6 +1,6 @@
 /* Personal theme customisations */
 
-/* Initial colour palette */
+/* Colours */
 :root {
   --site-background: #f5f3eb;
   --site-text: #282d27;
@@ -8,23 +8,27 @@
   --site-border: #c8cebf;
 }
 
-/* Light background and text */
+/* Main page */
+html,
 body {
-  background-color: var(--site-background);
-  color: var(--site-text);
+  background: #f5f3eb !important;
+  color: #282d27 !important;
 }
 
 /* Links */
-a {
-  color: var(--site-accent);
+a,
+a:visited {
+  color: #607553 !important;
 }
 
+/* Link hover */
 a:hover {
+  color: #405337 !important;
   text-decoration: underline;
 }
 
-/* Subtle separators */
+/* Borders and separators */
 hr {
   border: 0;
-  border-top: 1px solid var(--site-border);
+  border-top: 1px solid #c8cebf;
 }
