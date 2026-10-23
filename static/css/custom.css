@@ -186,3 +186,49 @@ main blockquote {
   font-size: 14px;
   line-height: 1.6;
 }
+
+
+/* Compact, consistent site header */
+body > header {
+  padding: 12px 0 8px !important;
+  margin: 0 !important;
+}
+
+.site-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.site-name {
+  font-family: "Tamzen", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+.site-nav a {
+  font-family: "Tamzen", monospace !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Reduce empty space around main content */
+body > main {
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
+body > footer {
+  padding: 8px 0 12px !important;
+}
