@@ -222,9 +222,9 @@ body > header {
 }
 
 body > footer {
-  padding: 8px 0 12px !important;
+  padding: 12px 0 !important;
   color: var(--site-panel);
-  font-size: 14px !important;   
+  font-size: 14px !important;
 }
 
 footer p {
