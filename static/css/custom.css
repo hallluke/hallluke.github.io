@@ -93,7 +93,7 @@ main li,
 main blockquote {
   font-family: var(--body-font) !important;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 /* Headings */
@@ -110,8 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Contrasting font for headings and navigation */
 
 h1, h2, h3, h4, h5, h6,
-.site-name,
-.site-nav a {
+.site-name {
   font-family: var(--heading-font) !important;
   font-weight: 600 !important;
 }
