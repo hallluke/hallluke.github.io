@@ -344,6 +344,11 @@ main hr {
   color: var(--site-muted);
 }
 
+/* Disable Shibui's automatic heading numbering */
+main h2::before {
+  content: none !important;
+}
+
 /* =========================================
    Responsive adjustments
    ========================================= */
