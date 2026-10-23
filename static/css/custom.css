@@ -76,12 +76,28 @@ html {
 }
 
 body {
-  background: var(--site-background) !important;
+  background: transparent !important;
+  position: relative;
+  isolation: isolate;
   color: var(--site-text) !important;
   font-family: var(--body-font);
   padding-top: 15px;
   padding-bottom: 15px;
   gap: 0 !important;
+}
+
+/* Solid background behind header, main and footer */
+body::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 900px);
+  background: var(--site-background);
+  pointer-events: none;
 }
 
 main,
