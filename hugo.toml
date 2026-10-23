@@ -13,22 +13,18 @@ title = "Luke Hall"
   showreadingtime = false
 
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
 
   [[menu.main]]
     name = "Projects"
     url = "/projects/"
-    weight = 2
+    weight = 1
 
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 2
 
   [[menu.main]]
-    name = "Links"
-    url = "/links/"
-    weight = 4
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
