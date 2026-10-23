@@ -278,3 +278,36 @@ body > footer,
 body > footer a {
   color: #899188 !important;
 }
+
+
+/* Generative ASCII artwork */
+.ascii-art {
+  margin-bottom: 2rem;
+}
+
+.ascii-art pre {
+  font-family: "Tamzen", monospace;
+  font-size: 14px;
+  line-height: 1.15;
+  color: #526b46;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.ascii-art button {
+  font-family: "Tamzen", monospace;
+  font-size: 14px;
+  color: #526b46;
+  background: transparent;
+  border: 1px solid #c8cdc5;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+
+.ascii-art button:hover {
+  background: #e8e9e5;
+}
