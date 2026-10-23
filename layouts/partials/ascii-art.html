@@ -1,0 +1,48 @@
+<div class="ascii-art">
+  <pre id="ascii-field" aria-hidden="true"></pre>
+  <button type="button" id="ascii-regenerate">
+    ↻ Regenerate
+  </button>
+</div>
+
+<script>
+(function () {
+  const field = document.getElementById("ascii-field");
+  const button = document.getElementById("ascii-regenerate");
+
+  function generate() {
+    const width = 64;
+    const height = 16;
+    const seed = Math.random() * 100;
+
+    const lines = [];
+
+    for (let y = 0; y < height; y++) {
+      let line = "";
+
+      for (let x = 0; x < width; x++) {
+        const value =
+          Math.sin(x * 0.23 + y * 0.34 + seed * 0.47) *
+          Math.cos(x * 0.12 - y * 0.29) +
+          Math.sin(x * 0.07 - y * 0.17 + seed * 0.31) * 0.5;
+
+        let char = " ";
+
+        if (value > 0.75) char = "#";
+        else if (value > 0.43) char = "+";
+        else if (value > 0.14) char = ":";
+        else if (value > -0.2) char = "·";
+
+        line += char;
+      }
+
+      lines.push(line);
+    }
+
+    field.textContent = lines.join("\n");
+  }
+
+  button.addEventListener("click", generate);
+  generate();
+})();
+</script>
