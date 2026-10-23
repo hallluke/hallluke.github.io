@@ -267,3 +267,14 @@ body > header {
     padding: 12px 18px 8px !important;
   }
 }
+
+/* Site name: regular-weight Tamzen */
+.site-name {
+  font-weight: 400 !important;
+}
+
+/* Footer: quieter than the main content */
+body > footer,
+body > footer a {
+  color: #899188 !important;
+}
