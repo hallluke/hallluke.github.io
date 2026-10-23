@@ -147,3 +147,71 @@ main {
     margin-top: 8px;
   }
 }
+
+/* IBM Plex Sans */
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Source Sans 3 */
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("/fonts/SourceSans3-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Switch between fonts by changing this line */
+
+:root {
+  --body-font: "IBM Plex Sans", sans-serif;
+}
+
+/* Body content only: retain Tamzen headings/navigation */
+
+main p,
+main li,
+main blockquote {
+  font-family: var(--body-font) !important;
+  font-size: 16px;
+  line-height: 1.65;
+}
