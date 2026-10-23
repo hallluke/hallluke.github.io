@@ -2,6 +2,7 @@
 title: "Historical Fiction Book Title Generator"
 date: 2026-10-22
 draft: false
+description: "A procedural experiment in literary clichés, generating imaginary historical fiction titles."
 ---
 
 A playful procedural book-title generator inspired by the familiar *The [Occupation] of [Place]* naming convention in historical fiction.
