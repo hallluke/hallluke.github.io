@@ -8,6 +8,7 @@
 
   {{ .Content }}
 
+  {{/*
   {{ $projects := where site.RegularPages "Section" "projects" }}
   {{ $projects = first 3 ($projects.ByDate.Reverse) }}
 
@@ -29,4 +30,5 @@
       <p><a href="{{ "projects/" | relURL }}">All projects →</a></p>
     </section>
   {{ end }}
+  */}}
 {{ end }}
