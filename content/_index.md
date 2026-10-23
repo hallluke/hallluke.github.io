@@ -2,4 +2,4 @@
 title: "Home"
 ---
 
-Pixel art is cool! ᚒ⎡ ᓏ ⎤~
+ASCII art is cool! ~⎡ᐖ⎤ా
