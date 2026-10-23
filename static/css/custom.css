@@ -59,7 +59,6 @@
   font-display: swap;
 }
 
-
 /* =========================================
    Base styles
    ========================================= */
@@ -99,7 +98,7 @@ main blockquote {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--display-font) !important;
   font-size: 16px !important;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.5;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -116,7 +115,6 @@ time {
   font-family: var(--display-font) !important;
   font-size: 16px;
 }
-
 
 /* =========================================
    Links and separators
@@ -144,11 +142,24 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+/* Content links remain identifiable without relying on colour */
+main p a,
+main li a,
+main blockquote a {
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+main p a:hover,
+main li a:hover,
+main blockquote a:hover {
+  text-decoration-thickness: 2px !important;
+}
+
 hr {
   border: 0;
   border-top: 1px solid var(--site-border);
 }
-
 
 /* =========================================
    Layout
@@ -183,7 +194,6 @@ body > footer a,
 body > footer a:visited {
   color: var(--site-muted) !important;
 }
-
 
 /* =========================================
    Site header and navigation
@@ -228,13 +238,59 @@ body > footer a:visited {
   text-decoration: underline !important;
 }
 
+/* =========================================
+   Content spacing and heading hierarchy
+   ========================================= */
+
+/* Main page heading */
+main h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Section headings: more space above than below */
+main h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Subsection headings */
+main h3,
+main h4,
+main h5,
+main h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs and lists */
+main p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+main ul,
+main ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Avoid extra space at the bottom of the panel */
+main > :last-child {
+  margin-bottom: 0;
+}
+
+/* Horizontal rules as section dividers */
+main hr {
+  margin: 1.75rem 0;
+}
 
 /* =========================================
    Generative ASCII artwork
    ========================================= */
 
 .ascii-art {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .ascii-art pre {
