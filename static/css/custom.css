@@ -412,7 +412,7 @@ main h2::before {
    ========================================= */
 
 .project-entry {
-  margin-bottom: 28px;
+  margin-bottom: 1rem;
 }
 
 .project-entry time {
@@ -421,7 +421,8 @@ main h2::before {
 }
 
 .project-entry h2 {
-  margin: 4px 0 8px;
+  margin: 0;
+  font-size: 14px !important;
 }
 
 .project-entry p {
