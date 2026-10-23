@@ -323,12 +323,20 @@ main hr {
 }
 
 .selected-projects ul {
-  list-style: none;
-  padding-left: 0;
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .selected-projects li {
+  list-style: none !important;
+  display: block;
   margin-bottom: 1rem;
+}
+
+.selected-projects li::marker {
+  content: "";
 }
 
 .selected-projects li p {
