@@ -9,20 +9,21 @@
           {{ .Date.Format "2 January 2006" }}
         </time>
 
-        <h2>
+        <span>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-
+        </span>
+        <br />
+         <br />
         {{ with .Params.description }}
-          <p>{{ . }}</p>
+          <span>{{ . }}</span>
         {{ end }}
 
         {{ with .Params.project_url }}
-          <p class="project-external">
+          <span class="project-external">
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
               View project ↗
             </a>
-          </p>
+          </span>
         {{ end }}
       </article>
     {{ end }}
