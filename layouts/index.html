@@ -4,44 +4,27 @@
 
   {{ partial "ascii-art.html" . }}
 
-  <div class="home-index">
-    <p class="index-label">LUKE HALL / INDEX</p>
-    <hr>
+  {{ .Content }}
 
-    <section>
-      <h2>01 / About</h2>
-      {{ .Content }}
-    </section>
+  {{ $projects := where site.RegularPages "Section" "projects" }}
+  {{ $projects = first 3 ($projects.ByDate.Reverse) }}
 
-    <section>
-      <h2>02 / Projects</h2>
+  {{ with $projects }}
+    <section class="selected-projects">
+      <h2>Selected Projects</h2>
 
-      {{ $projects := where site.RegularPages "Section" "projects" }}
-      {{ $projects = first 3 ($projects.ByDate.Reverse) }}
-
-      {{ with $projects }}
-        <ul class="index-projects">
-          {{ range . }}
-            <li>
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              {{ with .Params.description }}
-                <p>{{ . }}</p>
-              {{ end }}
-            </li>
-          {{ end }}
-        </ul>
-      {{ end }}
+      <ul>
+        {{ range . }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            {{ with .Params.description }}
+              <p>{{ . }}</p>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
 
       <p><a href="{{ "projects/" | relURL }}">All projects →</a></p>
     </section>
-
-    <section>
-      <h2>03 / Elsewhere</h2>
-      <p>
-        <a href="{{ "about/" | relURL }}">About me →</a>
-        &nbsp;&nbsp;
-        <a href="{{ "contact/" | relURL }}">Contact →</a>
-      </p>
-    </section>
-  </div>
+  {{ end }}
 {{ end }}
