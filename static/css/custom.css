@@ -74,7 +74,7 @@ body {
 
 body {
   font-family: var(--body-font);
-  padding-top 15px;
+  padding-top: 15px;
   padding-bottom: 15px;
   gap: 0 !important;
 }
@@ -190,7 +190,7 @@ main {
 }
 
 body > main {
-  margin-top: 4px;
+  margin-top: 15px;
   margin-bottom: 12px;
 }
 
