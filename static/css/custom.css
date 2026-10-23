@@ -227,6 +227,10 @@ body > footer {
   font-size: 14px !important;   
 }
 
+footer p {
+   margin: 0;
+}
+
 body > footer a,
 body > footer a:visited {
   color: var(--site-muted) !important;
