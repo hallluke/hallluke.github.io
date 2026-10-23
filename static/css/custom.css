@@ -66,13 +66,18 @@
    Base styles
    ========================================= */
 
-html,
-body {
-  background: var(--site-background) !important;
-  color: var(--site-text) !important;
+html {
+  color: var(--site-text);
+  background-color: var(--site-background) !important;
+  background-image:
+    linear-gradient(to right, #d4dbd0 1px, transparent 1px),
+    linear-gradient(to bottom, #d4dbd0 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 body {
+  background: var(--site-background) !important;
+  color: var(--site-text) !important;
   font-family: var(--body-font);
   padding-top: 15px;
   padding-bottom: 15px;
