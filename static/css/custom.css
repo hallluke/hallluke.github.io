@@ -2,6 +2,8 @@
    Colour palette and typography
    ========================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+
 :root {
   --site-background: #e8e9e5;
   --site-panel: #fafaf7;
@@ -13,6 +15,7 @@
 
   --body-font: "Tamzen", monospace;
   --display-font: "Tamzen", monospace;
+  --heading-font: "Space Grotesk", sans-serif;
 }
 
 /* Tamzen bitmap font */
@@ -102,6 +105,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+/* Contrasting font for headings and navigation */
+
+h1, h2, h3, h4, h5, h6,
+.site-name,
+.site-nav a {
+  font-family: var(--heading-font) !important;
 }
 
 /* Interface typography */
