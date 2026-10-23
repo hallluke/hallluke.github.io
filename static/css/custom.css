@@ -143,6 +143,7 @@ button:focus-visible {
 }
 
 /* Content links remain identifiable without relying on colour */
+
 main p a,
 main li a,
 main blockquote a {
@@ -321,6 +322,19 @@ main hr {
   background: var(--site-background);
 }
 
+.selected-projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.selected-projects li {
+  margin-bottom: 1rem;
+}
+
+.selected-projects li p {
+  margin-top: 0.25rem;
+  color: var(--site-muted);
+}
 
 /* =========================================
    Responsive adjustments
