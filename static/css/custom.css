@@ -406,3 +406,28 @@ main h2::before {
     margin-top: 8px;
   }
 }
+
+/* =========================================
+   Projects listing
+   ========================================= */
+
+.project-entry {
+  margin-bottom: 28px;
+}
+
+.project-entry time {
+  color: var(--site-muted);
+  font-size: 14px;
+}
+
+.project-entry h2 {
+  margin: 4px 0 8px;
+}
+
+.project-entry p {
+  margin: 0 0 8px;
+}
+
+.project-external a {
+  font-size: 14px;
+}
