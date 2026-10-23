@@ -5,19 +5,15 @@
   <div class="project-list">
     {{ range .Pages.ByDate.Reverse }}
       <article class="project-entry">
+        <p>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </p>
         <time datetime="{{ .Date.Format "2006-01-02" }}">
           {{ .Date.Format "2 January 2006" }}
         </time>
-
-        <span>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </span>
-        <br />
-         <br />
         {{ with .Params.description }}
           <span>{{ . }}</span>
         {{ end }}
-
         {{ with .Params.project_url }}
           <span class="project-external">
             <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
