@@ -1,51 +1,18 @@
+/* =========================================
+   Colour palette and typography
+   ========================================= */
 
-/* Site colour palette */
 :root {
   --site-background: #e8e9e5;
+  --site-panel: #fafaf7;
   --site-text: #252b27;
   --site-accent: #526b46;
   --site-accent-hover: #354d2d;
-  --site-border: #bfc5ba;
-}
+  --site-border: #c8cdc5;
+  --site-muted: #899188;
 
-html,
-body {
-  background-color: var(--site-background) !important;
-  color: var(--site-text) !important;
-}
-
-/* Text throughout the page */
-body,
-main,
-header,
-footer,
-nav,
-p,
-li,
-h1, h2, h3, h4, h5, h6 {
-  color: var(--site-text);
-}
-
-/* Links, including navigation */
-a,
-a:visited,
-nav a,
-header a {
-  color: var(--site-accent) !important;
-}
-
-a:hover,
-a:focus-visible,
-nav a:hover,
-header a:hover {
-  color: var(--site-accent-hover) !important;
-  text-decoration: underline;
-}
-
-/* Separators */
-hr {
-  border: 0;
-  border-top: 1px solid var(--site-border);
+  --body-font: "IBM Plex Sans", sans-serif;
+  --display-font: "Tamzen", monospace;
 }
 
 /* Tamzen bitmap font */
@@ -53,99 +20,17 @@ hr {
 @font-face {
   font-family: "Tamzen";
   src: url("/fonts/Tamzen8x16r.ttf") format("truetype");
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Tamzen";
   src: url("/fonts/Tamzen8x16b.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
-  font-weight: 700;
   font-display: swap;
-}
-
-/* Headings: compact, uppercase, no oversized titles */
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Tamzen", monospace !important;
-  font-size: 16px !important;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-/* Header, navigation and interface elements */
-
-header,
-nav,
-footer,
-button,
-label,
-time {
-  font-family: "Tamzen", monospace !important;
-  font-size: 16px;
-}
-
-/* Keep long-form content easy to read */
-
-main p,
-main li {
-  font-family: system-ui, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-/* Navigation menu links */
-nav a,
-nav a:visited,
-header a,
-header a:visited {
-  font-family: "Tamzen", monospace !important;
-  font-size: 16px !important;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-
-/* Page layout */
-
-body {
-  background: #e8e9e5 !important;
-  color: #252b27 !important;
-}
-
-/* Header and footer breathing room */
-body > header,
-body > footer {
-  padding: 20px 24px;
-}
-
-/* Main content panel */
-main {
-  box-sizing: border-box;
-  background: #fafaf7 !important;
-  border: 1px solid #c8cdc5;
-  border-radius: 2px;
-  box-shadow: 3px 3px 0 rgba(37, 43, 39, 0.09);
-  padding: 28px 32px;
-  margin-top: 12px;
-  margin-bottom: 20px;
-}
-
-/* Smaller screens */
-@media (max-width: 600px) {
-  body > header,
-  body > footer {
-    padding: 16px;
-  }
-
-  main {
-    padding: 20px 18px;
-    margin-top: 8px;
-  }
 }
 
 /* IBM Plex Sans */
@@ -173,11 +58,33 @@ main {
   font-style: normal;
   font-display: swap;
 }
-:root {
-  --body-font: "IBM Plex Sans", sans-serif;
+
+
+/* =========================================
+   Base styles
+   ========================================= */
+
+html,
+body {
+  background: var(--site-background) !important;
+  color: var(--site-text) !important;
 }
 
-/* Body content only: retain Tamzen headings/navigation */
+body {
+  font-family: var(--body-font);
+}
+
+main,
+header,
+footer,
+nav,
+p,
+li,
+h1, h2, h3, h4, h5, h6 {
+  color: var(--site-text);
+}
+
+/* Long-form content */
 
 main p,
 main li,
@@ -187,12 +94,100 @@ main blockquote {
   line-height: 1.6;
 }
 
+/* Headings */
 
-/* Compact, consistent site header */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--display-font) !important;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Interface typography */
+
+header,
+nav,
+footer,
+button,
+label,
+time {
+  font-family: var(--display-font) !important;
+  font-size: 16px;
+}
+
+
+/* =========================================
+   Links and separators
+   ========================================= */
+
+a,
+a:visited {
+  color: var(--site-accent) !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--site-accent-hover) !important;
+  text-decoration: underline !important;
+  text-decoration-style: solid !important;
+}
+
+/* Visible keyboard focus */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--site-border);
+}
+
+
+/* =========================================
+   Layout
+   ========================================= */
+
+main {
+  box-sizing: border-box;
+  background: var(--site-panel) !important;
+  border: 1px solid var(--site-border);
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 rgba(37, 43, 39, 0.09);
+  padding: 28px 32px;
+}
+
+body > main {
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+
 body > header {
-  padding: 12px 0 8px !important;
+  box-sizing: border-box;
+  padding: 12px 32px 8px !important;
   margin: 0 !important;
 }
+
+body > footer {
+  padding: 8px 0 12px !important;
+  color: var(--site-muted);
+}
+
+body > footer a,
+body > footer a:visited {
+  color: var(--site-muted) !important;
+}
+
+
+/* =========================================
+   Site header and navigation
+   ========================================= */
 
 .site-header {
   display: flex;
@@ -202,12 +197,15 @@ body > header {
   gap: 8px 24px;
 }
 
-.site-name {
-  font-family: "Tamzen", monospace;
-  font-weight: 700;
+.site-name,
+.site-name:visited,
+.site-name:hover {
+  font-family: var(--display-font);
   font-size: 16px;
-  text-decoration: none;
+  font-weight: 400;
+  color: var(--site-text) !important;
   text-transform: uppercase;
+  text-decoration: none !important;
 }
 
 .site-nav {
@@ -216,80 +214,34 @@ body > header {
   gap: 8px 18px;
 }
 
-.site-nav a {
-  font-family: "Tamzen", monospace !important;
+.site-nav a,
+.site-nav a:visited {
+  font-family: var(--display-font) !important;
   font-size: 16px !important;
+  font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none;
-}
-
-/* Reduce empty space around main content */
-body > main {
-  margin-top: 4px;
-  margin-bottom: 12px;
-}
-
-body > footer {
-  padding: 8px 0 12px !important;
-}
-
-
-/* Links: no permanent dotted underline */
-a,
-a:visited {
   text-decoration: none !important;
-  border-bottom: none !important;
 }
 
-a:hover,
-a:focus-visible {
+.site-nav a:hover,
+.site-nav a:focus-visible {
   text-decoration: underline !important;
-  text-decoration-style: solid !important;
-}
-
-/* Site title: dark, not green */
-.site-name,
-.site-name:visited,
-.site-name:hover {
-  color: #252b27 !important;
-  text-decoration: none !important;
-}
-
-/* Match header alignment to main panel */
-body > header {
-  box-sizing: border-box;
-  padding: 12px 32px 8px !important;
-}
-
-/* Mobile: match main's smaller padding */
-@media (max-width: 600px) {
-  body > header {
-    padding: 12px 18px 8px !important;
-  }
-}
-
-/* Site name: regular-weight Tamzen */
-.site-name {
-  font-weight: 400 !important;
-}
-
-/* Footer: quieter than the main content */
-body > footer,
-body > footer a {
-  color: #899188 !important;
 }
 
 
-/* Generative ASCII artwork */
+/* =========================================
+   Generative ASCII artwork
+   ========================================= */
+
 .ascii-art {
   margin-bottom: 2rem;
 }
 
 .ascii-art pre {
-  font-family: "Tamzen", monospace;
+  font-family: var(--display-font);
   font-size: 14px;
   line-height: 1.15;
-  color: #526b46;
+  color: var(--site-accent);
   background: transparent;
   border: none;
   padding: 0;
@@ -299,15 +251,35 @@ body > footer a {
 }
 
 .ascii-art button {
-  font-family: "Tamzen", monospace;
+  font-family: var(--display-font);
   font-size: 14px;
-  color: #526b46;
+  color: var(--site-accent);
   background: transparent;
-  border: 1px solid #c8cdc5;
+  border: 1px solid var(--site-border);
   padding: 4px 9px;
   cursor: pointer;
 }
 
 .ascii-art button:hover {
-  background: #e8e9e5;
+  color: var(--site-accent-hover);
+  background: var(--site-background);
+}
+
+
+/* =========================================
+   Responsive adjustments
+   ========================================= */
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 18px;
+  }
+
+  body > header {
+    padding: 12px 18px 8px !important;
+  }
+
+  body > main {
+    margin-top: 8px;
+  }
 }
