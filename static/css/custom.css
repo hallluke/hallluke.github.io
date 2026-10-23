@@ -152,7 +152,7 @@ main {
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSansCondensed-Regular.ttf") format("truetype");
+  src: url("/fonts/IBMPlexSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -160,7 +160,7 @@ main {
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSansCondensed-Italic.ttf") format("truetype");
+  src: url("/fonts/IBMPlexSans-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -168,7 +168,7 @@ main {
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url("/fonts/IBMPlexSansCondensed-Bold.ttf") format("truetype");
+  src: url("/fonts/IBMPlexSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -203,7 +203,7 @@ main {
 /* Switch between fonts by changing this line */
 
 :root {
-  --body-font: "Source Sans 3", sans-serif;
+  --body-font: "IBM Plex Sans", sans-serif;
 }
 
 /* Body content only: retain Tamzen headings/navigation */
