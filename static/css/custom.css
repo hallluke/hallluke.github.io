@@ -203,7 +203,7 @@ main {
 /* Switch between fonts by changing this line */
 
 :root {
-  --body-font: "IBM Plex Sans", sans-serif;
+  --body-font: "Source Sans 3", sans-serif;
 }
 
 /* Body content only: retain Tamzen headings/navigation */
