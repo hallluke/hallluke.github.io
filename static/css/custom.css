@@ -377,3 +377,54 @@ main h2::before {
     margin-top: 8px;
   }
 }
+
+/* =========================================
+   Page Layout fixes
+   ========================================= */
+
+/* Compact page layout */
+body {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Header: align with main content, reduce vertical padding */
+body > header {
+  box-sizing: border-box;
+  padding: 6px 32px 6px !important;
+  margin: 0 !important;
+}
+
+/* Consistent gap between header and main */
+body > main {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+/* Footer: smaller, lighter, closer to bottom */
+body > footer {
+  padding: 4px 32px 6px !important;
+  font-size: 14px !important;
+  color: #a0a79e !important;
+}
+
+body > footer a,
+body > footer a:visited {
+  color: #a0a79e !important;
+}
+
+/* Match footer text size, including nested elements */
+body > footer * {
+  font-size: 14px !important;
+}
+
+/* Mobile alignment */
+@media (max-width: 600px) {
+  body > header {
+    padding: 6px 18px !important;
+  }
+
+  body > footer {
+    padding: 4px 18px 6px !important;
+  }
+}
