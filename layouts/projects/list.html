@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <div class="project-list">
+    {{ range .Pages.ByDate.Reverse }}
+      <article class="project-entry">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "2 January 2006" }}
+        </time>
+
+        <h2>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+
+        {{ with .Params.description }}
+          <p>{{ . }}</p>
+        {{ end }}
+
+        {{ with .Params.project_url }}
+          <p class="project-external">
+            <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
+              View project ↗
+            </a>
+          </p>
+        {{ end }}
+      </article>
+    {{ end }}
+  </div>
+{{ end }}
