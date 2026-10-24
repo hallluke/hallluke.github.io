@@ -2,7 +2,7 @@
 title: "Tiny Unicode Friend Generator"
 date: 2018-03-18
 draft: false
-description: "A procedural book title generator for historical fiction."
+description: "A procedural Unicode friend generator."
 project_url: "https://hallluke.github.io/lil-buddy/"
 ---
 
