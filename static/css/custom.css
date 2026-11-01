@@ -18,13 +18,26 @@
   --heading-font: "Space Grotesk", sans-serif;
 
   /* --container-width: 64ch; from theme CSS */
-  --grid-columns: 28;
-  --grid-padding: 14px;
-  --grid-width: min(
-    calc(var(--container-width) + 2 * var(--grid-padding)),
-    100vw
+  --grid-columns: 26;
+  --strip-padding-cells: 2.5;
+  --content-width: min(
+    var(--container-width),
+    calc(100vw - 2 * var(--spacing-lg))
   );
-  --grid-size: calc(var(--grid-width) / var(--grid-columns));
+  --grid-size: round(
+  nearest,
+  calc(
+    var(--content-width) /
+    (var(--grid-columns) - 2 * var(--strip-padding-cells))
+  ),
+  1px
+);
+  --strip-padding: calc(
+    var(--grid-size) * var(--strip-padding-cells)
+  );
+  --strip-width: calc(
+  var(--grid-size) * var(--grid-columns)
+);
 }
 
 /* Tamzen bitmap font */
@@ -107,9 +120,9 @@ body::before {
   z-index: -1;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: calc(50% + 0.5px);
   transform: translateX(-50%);
-  width: calc(var(--grid-width) - 2px);
+  width: calc(var(--strip-width) - 1px);
   background: var(--site-background);
   pointer-events: none;
 }
