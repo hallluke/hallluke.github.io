@@ -107,7 +107,7 @@ body::before {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: var(--grid-width);
+  width: calc(var(--grid-width) - 2px);
   background: var(--site-background);
   pointer-events: none;
 }
