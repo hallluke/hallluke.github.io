@@ -16,7 +16,8 @@
   --body-font: "Tamzen", monospace;
   --display-font: "Tamzen", monospace;
   --heading-font: "Space Grotesk", sans-serif;
-  
+
+  /* --container-width: 64ch; from theme CSS */
   --grid-columns: 28;
   --grid-padding: 14px;
   --grid-width: min(
