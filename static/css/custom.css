@@ -16,6 +16,13 @@
   --body-font: "Tamzen", monospace;
   --display-font: "Tamzen", monospace;
   --heading-font: "Space Grotesk", sans-serif;
+  
+  --grid-columns: 28;
+  --grid-width: min(
+    var(--container-width),
+    calc(100vw - 2 * var(--spacing-lg))
+  );
+  --grid-size: calc(var(--grid-width) / var(--grid-columns));
 }
 
 /* Tamzen bitmap font */
@@ -72,7 +79,10 @@ html {
   background-image:
     linear-gradient(to right, #d4dbd0 1px, transparent 1px),
     linear-gradient(to bottom, #d4dbd0 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: var(--grid-size) var(--grid-size);
+  background-position:
+    calc(50% - var(--grid-width) / 2) 0,
+    0 0;
 }
 
 body {
