@@ -18,9 +18,10 @@
   --heading-font: "Space Grotesk", sans-serif;
   
   --grid-columns: 28;
+  --grid-padding: 14px;
   --grid-width: min(
-    var(--container-width),
-    calc(100vw - 2 * var(--spacing-lg))
+    calc(var(--container-width) + 2 * var(--grid-padding)),
+    100vw
   );
   --grid-size: calc(var(--grid-width) / var(--grid-columns));
 }
@@ -105,7 +106,7 @@ body::before {
   z-index: -1;
   top: 0;
   bottom: 0;
-  left: calc(50% + 1px);
+  left: 50%;
   transform: translateX(-50%);
   width: calc(var(--grid-width) - 2px);
   background: var(--site-background);
