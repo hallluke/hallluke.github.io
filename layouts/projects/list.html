@@ -9,16 +9,21 @@
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h2>
         <time datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "2 January 2006" }}
+          {{ .Date.Format "January 2006" }}
         </time>
         <br />
         {{ with .Params.description }}
           <span>{{ . }}</span>
         {{ end }}
+        {{ $projectTitle := .Title }}
+        {{ $linkLabel := default "Visit project" .Params.project_link_label }}
         {{ with .Params.project_url }}
           <span class="project-external">
-            [<a href="{{ . }}" target="_blank" rel="noopener noreferrer">
-              View project ↗
+            [<a href="{{ . }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
+              {{ $linkLabel }}
             </a>]
           </span>
         {{ end }}
