@@ -10,4 +10,4 @@ I like working on projects that involve both analytical and creative thinking, f
 
 I'm a data analyst based in Bristol, UK. Outside work, I enjoy live music, running, cycling and volunteering locally.
 
-<a href="/static/assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+<a href="/assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
