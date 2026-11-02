@@ -4,6 +4,7 @@ date: 2018-03-18
 draft: false
 description: "A procedural Unicode friend generator."
 project_url: "https://hallluke.github.io/lil-buddy/"
+project_link_label: "Try generator"
 ---
 
 A procedural Unicode friend generator inspired by an old Tracery bot.

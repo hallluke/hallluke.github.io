@@ -4,6 +4,7 @@ date: 2026-08-30
 draft: false
 description: "An interactive map of art-trail venues across East Bristol."
 project_url: "https://hallluke.github.io/bs5-art-trail-map/"
+project_link_label: "Explore map"
 ---
 
 An interactive map of art-trail venues across East Bristol, created using Python.

@@ -4,6 +4,7 @@ date: 2017-03-13
 draft: false
 description: "A collection of generative text experiments."
 project_url: "https://hallluke.github.io/tracery-experiments/"
+project_link_label: "Explore experiments"
 ---
 
 A collection of generative text experiments: little systems that combine words, rules and randomness to make unexpected things.

@@ -4,6 +4,7 @@ date: 2026-10-22
 draft: false
 description: "A procedural book title generator for historical fiction."
 project_url: "https://hallluke.github.io/historical-fiction-generator/"
+project_link_label: "Try generator"
 ---
 
 A playful procedural book-title generator inspired by the familiar *The [Occupation] of [Place]* naming convention in historical fiction.
