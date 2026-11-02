@@ -459,3 +459,7 @@ main h2::before {
 .project-external a {
   font-size: 14px;
 }
+
+.project-external {
+  white-space: nowrap;
+}
