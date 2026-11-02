@@ -16,7 +16,7 @@
           <span>{{ . }}</span>
         {{ end }}
         {{ $projectTitle := .Title }}
-        {{ $linkLabel := default "Visit project" .Params.project_link_label }}
+        {{ $linkLabel := default "View the project" .Params.project_link_label }}
         {{ with .Params.project_url }}
           <span class="project-external">
             [<a href="{{ . }}"

@@ -2,9 +2,9 @@
 title: "Tiny Unicode Friend Generator"
 date: 2018-03-18
 draft: false
-description: "A procedural Unicode friend generator."
+description: "A little tool for creating characters from Unicode symbols."
 project_url: "https://hallluke.github.io/lil-buddy/"
-project_link_label: "Try generator"
+project_link_label: "Try the generator"
 ---
 
 A procedural Unicode friend generator inspired by an old Tracery bot.
