@@ -18,26 +18,26 @@
   --heading-font: "Space Grotesk", sans-serif;
 
   /* --container-width: 64ch; from theme CSS */
-  --grid-columns: 26;
-  --strip-padding-cells: 2.5;
+  --grid-columns: 28;
+  --strip-padding-cells: 1;
   --content-width: min(
     var(--container-width),
     calc(100vw - 2 * var(--spacing-lg))
   );
   --grid-size: round(
-  nearest,
-  calc(
-    var(--content-width) /
-    (var(--grid-columns) - 2 * var(--strip-padding-cells))
-  ),
-  1px
-);
+    nearest,
+    calc(
+      var(--content-width) /
+      (var(--grid-columns) - 2 * var(--strip-padding-cells))
+    ),
+    1px
+  );
   --strip-padding: calc(
     var(--grid-size) * var(--strip-padding-cells)
   );
   --strip-width: calc(
-  var(--grid-size) * var(--grid-columns)
-);
+    var(--grid-size) * var(--grid-columns)
+  );
 }
 
 /* Tamzen bitmap font */
