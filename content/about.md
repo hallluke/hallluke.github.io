@@ -8,6 +8,6 @@ I'm interested in exploring data, finding patterns and making sense of complex i
 
 I like working on projects that involve both analytical and creative thinking, from finding effective ways to present ideas to experimenting with language, images and interactive systems.
 
-I'm a data analyst based in Bristol, UK. Outside work, I enjoy live music, running, cycling and volunteering with local projects.
+I'm a data analyst based in Bristol, UK. Outside work, I enjoy live music, running, cycling and volunteering locally.
 
 <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
