@@ -18,8 +18,8 @@
   --heading-font: "Space Grotesk", sans-serif;
 
   /* --container-width: 64ch; from theme CSS */
-  --grid-columns: 28;
-  --strip-padding-cells: 1;
+  --grid-columns: 26;
+  --strip-padding-cells: 2;
   --content-width: min(
     var(--container-width),
     calc(100vw - 2 * var(--spacing-lg))
