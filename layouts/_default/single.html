@@ -3,9 +3,7 @@
 
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
   {{ if eq .Section "projects" }}
-    <time datetime="{{ .Date.Format "2006-01-02" }}">
-      {{ .Date.Format "January 2006" }}
-    </time>
+    {{ partial "date.html" .Date }}
   {{ end }}
   {{ .Content }}
 {{ end }}
