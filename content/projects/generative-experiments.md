@@ -4,7 +4,7 @@ date: 2017-03-13
 draft: false
 description: "A collection of generative text experiments."
 project_url: "https://hallluke.github.io/tracery-experiments/"
-project_link_label: "Explore experiments"
+project_link_label: "Visit collection"
 ---
 
 A collection of generative text experiments: little systems that combine words, rules and randomness to make unexpected things.
@@ -14,4 +14,4 @@ Currently features:
 - Ghost Echoes
 - Dieter Says/Good Design
 
-[Explore the experiments →](https://hallluke.github.io/tracery-experiments/)
+[Visit the collection →](https://hallluke.github.io/tracery-experiments/)

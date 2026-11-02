@@ -11,4 +11,4 @@ A procedural Unicode friend generator inspired by an old Tracery bot.
 
 Recreated and expanded with new character combinations, animated scenes and a deliberately imperfect typewriter aesthetic, complete with uneven ink, numbered specimens and occasional printing mishaps.
 
-[Explore the generator →](https://hallluke.github.io/lil-buddy/)
+[Try the generator →](https://hallluke.github.io/lil-buddy/)
