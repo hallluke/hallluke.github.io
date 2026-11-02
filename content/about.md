@@ -4,8 +4,8 @@ date: 2026-10-22
 toc: false
 ---
 
-I'm interested in exploring data, finding patterns and making sense of complex information, particularly how it can be presented and communicated through visualisation and design.
+I'm interested in exploring data, finding patterns and making sense of complex information, especially through data visualisation and information design.
 
-I enjoy the overlap between analytical and creative thinking, from finding useful ways to communicate ideas to experimenting with language, images and interactive systems.
+I like working on projects that involve both analytical and creative thinking, from finding effective ways to present ideas to experimenting with language, images and interactive systems.
 
-I'm based in Bristol, UK, with a background in data analysis, reporting and visualisation, using tools including SQL, Excel and Python.
+I'm a data analyst based in Bristol, UK. Outside work, I enjoy live music, running, cycling and volunteering with local projects.
