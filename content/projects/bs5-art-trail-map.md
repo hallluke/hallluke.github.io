@@ -11,4 +11,6 @@ An interactive map of art-trail venues across East Bristol, created using Python
 
 The map brings together venue locations and information about participating artists, including descriptions, venue types and opening times. Visitors can explore the area, select individual markers and use the layer controls to explore different venue categories.
 
-[View the map →](https://hallluke.github.io/bs5-art-trail-map/)
+[<a href="https://hallluke.github.io/bs5-art-trail-map/" target="_blank" rel="noopener noreferrer" aria-label="Visit BS5 Art Trail Map (opens in a new tab)">
+    View the map →
+</a>]
