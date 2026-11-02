@@ -2,7 +2,7 @@
 title: "Generative Experiments"
 date: 2017-03-13
 draft: false
-description: "A procedural Unicode friend generator."
+description: "A collection of generative text experiments."
 project_url: "https://hallluke.github.io/tracery-experiments/"
 ---
 
