@@ -442,9 +442,14 @@ main h2::before {
   margin-bottom: 1rem;
 }
 
-.project-entry time {
+.project-entry time,
+p > time {
   color: var(--site-muted);
   font-size: 14px;
+}
+
+p:has(time) {
+  margin-bottom: 0;
 }
 
 .project-entry h2 {
