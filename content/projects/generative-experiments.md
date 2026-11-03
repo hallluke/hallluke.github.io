@@ -3,7 +3,7 @@ title: "Generative Experiments"
 date: 2017-03-13
 draft: false
 description: "A collection of generative text experiments, including versions of some tracery bots."
-project_url: "https://lukehall.co/tracery-experiments/"
+project_url_slug: "tracery-experiments"
 project_link_label: "Visit the collection"
 ---
 
@@ -14,4 +14,4 @@ Currently features:
 - Ghost Echoes
 - Dieter Says/Good Design
 
-[Visit the collection →](https://lukehall.co/tracery-experiments/)
+{{< project-link >}}

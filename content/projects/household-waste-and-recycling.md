@@ -3,12 +3,14 @@ title: "Household Waste & Recycling Data"
 date: 2026-11-02
 draft: false
 description: "A visualisation of household waste and recycling collection data, updated automatically each day."
-project_url: "https://lukehall.co/data-and-design-work/"
+project_url_slug: "data-and-design-work"
 project_link_label: "Explore the visualisation"
 ---
 
-An automatically updated visualisation created using Python, D3.js and Observable Plot.
+I've been weighing my household waste to get a better idea of how much I throw away and recycle. Here I explore how even fairly ordinary data can be interesting and insightful given a little curiosity and some analytical expertise.
 
-These charts show various ways of breaking down my household waste disposal and recycling collections by weight. See daily, monthly and yearly trends and the breakdown by materials.
+Measurements are recorded in a private Google Sheet, then retrieved and processed by a Python data pipeline that validates the data, calculates summaries and produces estimates where records are incomplete. The results are published automatically each day and presented as interactive charts built with JavaScript, Observable Plot and D3, accompanied by contextual data tables and methodology notes.
 
-[Explore the visualisation →](https://lukehall.co/data-and-design-work/)
+The visualisations offer different perspectives on the data: breaking down and comparing quantities; highlighting changes and their scale; communicating proportions clearly; and revealing patterns over time.
+
+{{< project-link >}}
