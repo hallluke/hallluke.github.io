@@ -503,6 +503,6 @@ p:has(time) {
 }
 
 .project-date {
-  margin-top: 24px;
+  margin-top: 1rem;
   color: var(--muted);
 }
