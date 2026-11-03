@@ -20,7 +20,7 @@
         {{ with .Params.project_url_slug }}
           {{ $projectURL := printf "%s/" . | absURL }}
           <span class="project-external">
-            [<a href="{{ projectURL }}"
+            [<a href="{{ $projectURL }}"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
