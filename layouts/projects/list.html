@@ -5,28 +5,29 @@
   <div class="project-list">
     {{ range .Pages.ByDate.Reverse }}
       <article class="project-entry">
-        <h2>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h2>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "January 2006" }}
-        </time>
-        <br />
+        <div class="project-heading">
+          <h2>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h2>
+          <time datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "January 2006" }}
+          </time>
+        </div>
         {{ with .Params.description }}
-          <span>{{ . }}</span>
+          <p>{{ . }}</p>
         {{ end }}
         {{ $projectTitle := .Title }}
         {{ $linkLabel := default "View the project" .Params.project_link_label }}
         {{ with .Params.project_url_slug }}
           {{ $projectURL := printf "%s/" . | absURL }}
-          <span class="project-external">
+          <div class="project-external">
             [<a href="{{ $projectURL }}"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
               {{ $linkLabel }}
             </a>]
-          </span>
+          </div>
         {{ end }}
       </article>
     {{ end }}
