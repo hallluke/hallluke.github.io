@@ -17,9 +17,10 @@
         {{ end }}
         {{ $projectTitle := .Title }}
         {{ $linkLabel := default "View the project" .Params.project_link_label }}
-        {{ with .Params.project_url }}
+        {{ with .Params.project_url_slug }}
+          {{ $projectURL := printf "https://lukehall.co/%s/" . }}
           <span class="project-external">
-            [<a href="{{ . }}"
+            [<a href="{{ projectURL }}"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
