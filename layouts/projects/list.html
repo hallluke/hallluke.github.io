@@ -14,21 +14,22 @@
           </time>
         </div>
         {{ with .Params.description }}
-          <p>{{ . }}</p>
-        {{ end }}
-        {{ $projectTitle := .Title }}
-        {{ $linkLabel := default "View the project" .Params.project_link_label }}
-        {{ with .Params.project_url_slug }}
-          {{ $projectURL := printf "%s/" . | absURL }}
-          <br />
-          <span class="project-external">
-            [<a href="{{ $projectURL }}"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
-              {{ $linkLabel }}
-            </a>]
-          </span>
+          <p>{{ . }}
+            {{ end }}
+            {{ $projectTitle := .Title }}
+            {{ $linkLabel := default "View the project" .Params.project_link_label }}
+            {{ with .Params.project_url_slug }}
+            {{ $projectURL := printf "%s/" . | absURL }}
+            <br />
+            <span class="project-external">
+              [<a href="{{ $projectURL }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
+                {{ $linkLabel }}
+              </a>]
+            </span>
+          </p>
         {{ end }}
       </article>
     {{ end }}
