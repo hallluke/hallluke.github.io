@@ -20,14 +20,15 @@
         {{ $linkLabel := default "View the project" .Params.project_link_label }}
         {{ with .Params.project_url_slug }}
           {{ $projectURL := printf "%s/" . | absURL }}
-          <div class="project-external">
+          <br />
+          <span class="project-external">
             [<a href="{{ $projectURL }}"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
               {{ $linkLabel }}
             </a>]
-          </div>
+          </span>
         {{ end }}
       </article>
     {{ end }}
