@@ -1,0 +1,9 @@
+{{- $url := .Page.Params.project_url -}}
+{{- $label := .Page.Params.project_link_label | default "View the project" -}}
+{{- $title := .Page.Title -}}
+{{- with $url -}}
+  <a href="{{ . | safeURL }}"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="{{ $label }} — {{ $title }} (opens in a new tab)">{{ $label }}</a>
+{{- end -}}
