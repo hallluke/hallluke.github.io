@@ -495,7 +495,7 @@ p:has(time) {
   gap: 0.3rem;
   min-width: 0;
   max-width: 48%;
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--site-text);
 }
 
@@ -515,32 +515,11 @@ p:has(time) {
 }
 
 .project-navigation a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   color: var(--accent);
 }
 
 .project-navigation a:hover span:last-child {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
-/* */
-
-.project-navigation a {
-  color: var(--site-text);
-  text-decoration: none;
-}
-
-.project-navigation__label {
-  color: var(--site-muted);
-}
-
-.project-navigation a:hover {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.project-navigation a:hover span:last-child {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
