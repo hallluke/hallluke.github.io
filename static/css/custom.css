@@ -530,8 +530,8 @@ p:has(time) {
   text-align: right;
 }
 
-.project-navigation__label {
-  font-size: 0.85em;
+.project-navigation__label, .project-navigation span {
+  font-size: 14px;
   opacity: 0.7;
 }
 
