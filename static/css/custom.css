@@ -201,6 +201,7 @@ button:focus-visible {
 }
 
 /* Content links remain identifiable without relying on colour */
+main a,
 main p a,
 main li a,
 main blockquote a {
@@ -208,6 +209,7 @@ main blockquote a {
   text-underline-offset: 2px;
 }
 
+main a:hover,
 main p a:hover,
 main li a:hover,
 main blockquote a:hover {
@@ -309,6 +311,12 @@ body > footer a:visited {
 main h1 {
   margin-top: 0;
   margin-bottom: 1.5rem;
+}
+
+main h1::before {
+  content: ":: ";
+  white-space: pre;
+  color: var(--accent);
 }
 
 /* Section headings: more space above than below */
