@@ -551,7 +551,7 @@ p:has(time) {
 .site-tree__item {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
-  column-gap: 0.5ch;
+  column-gap: 1ch;
   align-items: baseline;
 }
 
@@ -565,4 +565,51 @@ p:has(time) {
   width: fit-content;
   max-width: 100%;
   overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   404 page marquee
+   ========================================= */
+
+.error-marquee {
+  margin-top: 2rem;
+  overflow: hidden;
+  max-width: 100%;
+  font-family: var(--body-font);
+  font-size: 14px;
+  color: var(--site-muted);
+}
+
+.error-marquee__track {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: error-marquee-scroll 18s linear infinite;
+}
+
+.error-marquee__track span {
+  flex: none;
+  padding-right: 4rem;
+}
+
+@keyframes error-marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-marquee__track {
+    animation: none;
+  }
+
+  .error-marquee__track span:not(:first-child) {
+    display: none;
+  }
+
+  .error-marquee__track {
+    width: auto;
+    white-space: normal;
+  }
 }

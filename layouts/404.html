@@ -4,7 +4,15 @@
   <p>There's nothing at this address. The page may have moved, or the link might be incorrect.</p>
 
   <p>
-  <a href="{{ .Site.Home.RelPermalink }}">Return home</a> · 
-  <a href="{{ "sitemap/" | relURL }}">View the sitemap</a>
-</p>
+    <a href="{{ .Site.Home.RelPermalink }}">Return home</a> · 
+    <a href="{{ "sitemap/" | relURL }}">View the sitemap</a>
+  </p>
+
+  <div class="error-marquee" aria-label="System notice: The requested document is not held at this location.">
+    <div class="error-marquee__track" aria-hidden="true">
+      <span>SYSTEM NOTICE: The requested document is not held at this location. *** </span>
+      <span>SYSTEM NOTICE: The requested document is not held at this location. *** </span>
+    </div>
+  </div>
+  
 {{ end }}
