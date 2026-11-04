@@ -48,4 +48,14 @@
       {{ end }}
     {{ end }}
   </nav>
+
+  {{ $pageCount := len $pages }}
+  {{ with $projects }}
+    {{ $pageCount = add $pageCount (len .RegularPages) }}
+  {{ end }}
+
+  <div class="site-tree__summary">
+    <p>{{ $pageCount }} pages indexed.</p>
+    <p>Directory generated automatically.</p>
+  </div>
 {{ end }}
