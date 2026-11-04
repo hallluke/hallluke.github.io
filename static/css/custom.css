@@ -555,10 +555,6 @@ p:has(time) {
   align-items: baseline;
 }
 
-.site-tree__item--child {
-  margin-left: 3ch;
-}
-
 .site-tree__branch {
   color: var(--site-text);
   white-space: pre;
