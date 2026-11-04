@@ -498,9 +498,10 @@ p:has(time) {
   box-sizing: border-box;
   gap: 0.3rem;
   min-width: 0;
-  max-width: 48%;
+  max-width: calc(50% - 0.5rem);
   text-decoration: none !important;
   color: var(--site-text);
+  font-size: 14px;
 }
 
 .project-navigation__next {
@@ -509,10 +510,6 @@ p:has(time) {
 }
 
 /* pagination styling */
-.project-navigation a {
-  font-size: 14px;
-}
-
 .project-navigation__label {
   /*opacity: 0.7;*/
   color: var(--site-muted);
