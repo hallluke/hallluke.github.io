@@ -20,8 +20,6 @@
     {{ end }}
   </div>
 
-  {{ partial "project-navigation.html" . }}
-  
   {{ $slug := .Params.project_url_slug }}
   {{ $label := .Params.project_link_label | default "Visit project" }}
   {{ $title := .Title }}
@@ -46,4 +44,6 @@
     </p>
   {{ end }}
 
+  {{ partial "project-navigation.html" . }}
+  
 {{ end }}

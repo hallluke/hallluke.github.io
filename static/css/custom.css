@@ -460,6 +460,11 @@ p:has(time) {
   color: var(--muted);
 }
 
+.project-links {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
 /* Project metadata */
 .project-meta {
   margin-top: 1rem;
