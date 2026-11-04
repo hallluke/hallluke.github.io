@@ -572,11 +572,11 @@ p:has(time) {
   font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--site-muted);
 }
 
 .site-tree__summary p {
   margin: 0;
+  color: var(--site-muted);
 }
 
 .site-tree__summary .page-count {
