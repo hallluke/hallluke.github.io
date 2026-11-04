@@ -487,11 +487,15 @@ p:has(time) {
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid var(--line);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .project-navigation a {
   display: flex;
   flex-direction: column;
+  flex: 1 1 0;
+  box-sizing: border-box;
   gap: 0.3rem;
   min-width: 0;
   max-width: 48%;
@@ -526,6 +530,7 @@ p:has(time) {
 .project-navigation a span:last-child {
   display: block;
   max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
