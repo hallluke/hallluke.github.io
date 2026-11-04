@@ -532,7 +532,7 @@ p:has(time) {
 }
 
 /* =========================================
-   Projects listing
+   Sitemap
    ========================================= */
    
 /* Sitemap directory tree */
@@ -567,6 +567,13 @@ p:has(time) {
   overflow-wrap: anywhere;
 }
 
+.site-tree__summary {
+  margin-top: 2rem;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--site-muted);
+}
 
 /* =========================================
    404 page marquee
