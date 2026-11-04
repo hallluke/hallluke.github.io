@@ -455,6 +455,20 @@ p:has(time) {
   color: var(--muted);
 }
 
+/* Project metadata */
+.project-meta {
+  margin-top: 1.5rem;
+}
+
+.project-meta p {
+  margin: 0;
+  color: var(--site-muted);
+}
+
+.project-meta__label {
+  color: var(--site-text);
+}
+
 /* project pagination */
 .project-navigation {
   display: flex;

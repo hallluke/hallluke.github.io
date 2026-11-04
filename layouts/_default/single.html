@@ -10,6 +10,12 @@
         {{ .Date.Format "2006-01" }}
       </time>
     </p>
+    {{ with .Params.status }}
+      <p>
+        <span class="project-meta__label">Status:</span>
+        <span>{{ . | humanize }}</span>
+      </p>
+    {{ end }}
   {{ end }}
   {{ partial "project-navigation.html" . }}
 {{ end }}
