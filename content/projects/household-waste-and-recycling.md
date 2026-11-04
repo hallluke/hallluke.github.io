@@ -1,6 +1,14 @@
 ---
 title: "Household Waste & Recycling Data"
 date: 2026-11-02
+status: "Active"
+tags:
+  - Python
+  - JavaScript
+  - Data Analysis
+  - Data Visualisation
+  - Information Design
+featured: true
 draft: false
 description: "A visualisation of household waste and recycling collection data, updated automatically each day."
 project_url_slug: "data-and-design-work"

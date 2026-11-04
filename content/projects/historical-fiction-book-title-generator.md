@@ -1,6 +1,12 @@
 ---
 title: "Historical Fiction Book Title Generator"
 date: 2026-10-22
+status: "Completed"
+tags:
+  - JavaScript
+  - Generative
+  - Creative Coding
+featured: true
 draft: false
 description: "A playful generator of fictional historical novels, complete with titles and book covers."
 project_url_slug: "historical-fiction-generator"

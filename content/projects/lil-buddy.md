@@ -1,6 +1,12 @@
 ---
 title: "Tiny Unicode Friend Generator"
 date: 2018-03-18
+status: "Revisited"
+tags:
+  - JavaScript
+  - Generative
+  - Creative Coding
+featured: true
 draft: false
 description: "A little tool for creating characters from Unicode symbols."
 project_url_slug: "lil-buddy"

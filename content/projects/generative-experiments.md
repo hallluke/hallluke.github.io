@@ -1,6 +1,13 @@
 ---
 title: "Generative Experiments"
 date: 2017-03-13
+status: "Revisited"
+tags:
+  - JavaScript
+  - Tracery
+  - Generative
+  - Creative Coding
+featured: false
 draft: false
 description: "A collection of generative text experiments, including versions of some tracery bots."
 project_url_slug: "tracery-experiments"
