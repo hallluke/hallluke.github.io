@@ -41,7 +41,7 @@
           {{ $lastProject := eq $j (sub (len $projectPages) 1) }}
 
           <div class="site-tree__item site-tree__item--child">
-            <span class="site-tree__branch" aria-hidden="true">{{ if $last }}    {{ else }}│   {{ end }}{{ if $lastProject }}└──{{ else }}├──{{ end }}</span>
+            <span class="site-tree__branch" aria-hidden="true">{{ if $last }}      {{ else }}│     {{ end }}{{ if $lastProject }}└──{{ else }}├──{{ end }}</span>
             <a href="{{ $project.RelPermalink }}">{{ $project.LinkTitle }}</a>
           </div>
         {{ end }}
