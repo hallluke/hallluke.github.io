@@ -4,7 +4,7 @@
   {{ .Content }}
 
   {{ if eq .Section "projects" }}
-    <div class="project-meta"></div>
+    <div class="project-meta">
       <p class="project-date">
         Initial release: 
         <time datetime="{{ .Date.Format "2006-01-02" }}">
