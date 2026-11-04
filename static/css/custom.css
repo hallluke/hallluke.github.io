@@ -580,7 +580,7 @@ p:has(time) {
 }
 
 .site-tree__summary .page-count {
-  color: var(--site-muted);
+  color: var(--site-text);
 }
 
 /* =========================================
