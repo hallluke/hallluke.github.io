@@ -532,7 +532,6 @@ p:has(time) {
 
 .project-navigation__label, .project-navigation span {
   font-size: 14px;
-  opacity: 0.7;
 }
 
 .project-navigation__label {
