@@ -255,8 +255,7 @@ footer p {
    margin: 0;
 }
 
-body > footer a,
-body > footer a:visited {
+body > footer a {
   color: var(--site-muted) !important;
 }
 
