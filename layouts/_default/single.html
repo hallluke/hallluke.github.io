@@ -4,18 +4,20 @@
   {{ .Content }}
 
   {{ if eq .Section "projects" }}
-    <p class="project-date">
-      Initial release: 
-      <time datetime="{{ .Date.Format "2006-01-02" }}">
-        {{ .Date.Format "2006-01" }}
-      </time>
-    </p>
-    {{ with .Params.status }}
-      <p>
-        <span class="project-meta__label">Status:</span>
-        <span>{{ . | humanize }}</span>
+    <div class="project-meta"></div>
+      <p class="project-date">
+        Initial release: 
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "2006-01" }}
+        </time>
       </p>
+      {{ with .Params.status }}
+        <p>
+          <span class="project-meta__label">Status:</span>
+          <span>{{ . | humanize }}</span>
+        </p>
+      {{ end }}
     {{ end }}
-  {{ end }}
+  </div>
   {{ partial "project-navigation.html" . }}
 {{ end }}
