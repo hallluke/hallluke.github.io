@@ -7,8 +7,10 @@ project_url_slug: "bs5-art-trail-map"
 project_link_label: "View the map"
 ---
 
-An interactive map of art-trail venues across East Bristol, created using Python.
+I made this alternative map before visiting the BS5 Art Trail because I found the official map difficult to use. Large markers obscured nearby streets, locations were grouped together even when zoomed in, and viewing artist information meant leaving the map. I wanted something that made it easier to explore the trail and learn about the exhibitors.
 
-The map brings together venue locations and information about participating artists, including descriptions, venue types and opening times. Visitors can explore the area, select individual markers and use the layer controls to explore different venue categories.
+I used Python to extracted the data from a PDF flyer and prepare the data, grouping the artists sharing a venue and geocoding addresses with OpenStreetMap and GeoPy/Nominatim. Some locations required manual checking and correction. I then used Folium and Leaflet to build an interactive map with smaller, colour-coded markers, filters for venue types and pop-ups showing artist details and opening times.
+
+The finished map keeps individual locations visible at every zoom level and lets visitors explore the listings without navigating away. It was a useful exercise in working with imperfect location data and thinking about how relatively small design decisions can make an interactive map easier to use.
 
 {{< project-link >}}
