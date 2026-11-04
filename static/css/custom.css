@@ -535,10 +535,12 @@ p:has(time) {
    Projects listing
    ========================================= */
    
+/* Sitemap directory tree */
 .site-tree {
   margin-top: 1.5rem;
   font-family: inherit;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .site-tree__root {
@@ -548,21 +550,23 @@ p:has(time) {
 
 .site-tree__item {
   display: grid;
-  grid-template-columns: 3ch minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   column-gap: 0.5ch;
-  align-items: start;
+  align-items: baseline;
 }
 
 .site-tree__item--child {
-  grid-template-columns: 7ch minmax(0, 1fr);
-  margin-left: 0;
+  margin-left: 3ch;
 }
 
 .site-tree__branch {
-  color: var(--site-muted);
+  color: var(--site-text);
   white-space: pre;
 }
 
 .site-tree a {
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
   overflow-wrap: anywhere;
 }

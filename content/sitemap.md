@@ -1,5 +1,5 @@
 ---
-title: "Site Map"
+title: "Sitemap"
 url: "/sitemap/"
 layout: "sitemap"
 ---
