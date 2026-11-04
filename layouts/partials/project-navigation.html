@@ -1,13 +1,13 @@
 {{ if eq .Section "projects" }}
   <nav class="project-navigation" aria-label="Project navigation">
-    {{ with .PrevInSection }}
+    {{ with .NextInSection }}
       <a href="{{ .RelPermalink }}" class="project-navigation__prev">
         <span class="project-navigation__label">← Previous project</span>
         <span>{{ .Title }}</span>
       </a>
     {{ end }}
 
-    {{ with .NextInSection }}
+    {{ with .PrevInSection }}
       <a href="{{ .RelPermalink }}" class="project-navigation__next">
         <span class="project-navigation__label">Next project →</span>
         <span>{{ .Title }}</span>
