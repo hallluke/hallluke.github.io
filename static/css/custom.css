@@ -568,11 +568,15 @@ p:has(time) {
 }
 
 .site-tree__summary {
-  margin-top: 2rem;
+  margin: 2rem 0 1rem;
   font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
   color: var(--site-muted);
+}
+
+.site-tree__summary p {
+  margin: 0;
 }
 
 /* =========================================
