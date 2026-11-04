@@ -148,16 +148,14 @@ main blockquote {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--display-font) !important;
+  font-family: var(--heading-font) !important;
   font-size: 16px !important;
-  font-weight: 400;
+  font-weight: 600 !important;
   line-height: 1.5;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
-/* Contrasting font for headings and navigation */
-h1, h2, h3, h4, h5, h6,
 .site-name {
   font-family: var(--heading-font) !important;
   font-weight: 600 !important;
@@ -408,13 +406,6 @@ p:has(time) {
   margin: 0 0 8px;
 }
 
-.project-external a {
-  font-size: 14px;
-}
-
-.project-external {
-  white-space: nowrap;
-}
 
 /* Project title and date */
 .project-heading {
@@ -448,9 +439,11 @@ p:has(time) {
   display: block;
   margin-top: 2px;
   letter-spacing: 0.2em;
+  white-space: nowrap;
 }
 
 .project-external a {
+  font-size: 14px;
   letter-spacing: 0;
 }
 
@@ -568,7 +561,7 @@ p:has(time) {
 }
 
 .site-tree__summary {
-  margin: 2rem 0 1rem;
+  margin: 1.5rem 0 1rem;
   font-family: inherit;
   font-size: 14px;
   line-height: 1.5;
@@ -579,7 +572,7 @@ p:has(time) {
   color: var(--site-muted);
 }
 
-.site-tree__summary .page-count {
+.site-tree__summary p:first-child {
   color: var(--site-text);
 }
 
@@ -617,14 +610,11 @@ p:has(time) {
 @media (prefers-reduced-motion: reduce) {
   .error-marquee__track {
     animation: none;
+    width: auto;
+    white-space: normal;
   }
 
   .error-marquee__track span:not(:first-child) {
     display: none;
-  }
-
-  .error-marquee__track {
-    width: auto;
-    white-space: normal;
   }
 }
