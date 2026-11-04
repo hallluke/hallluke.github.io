@@ -523,3 +523,10 @@ p:has(time) {
   text-decoration: underline !important;
 }
 
+.project-navigation a span:last-child {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
