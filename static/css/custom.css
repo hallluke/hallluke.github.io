@@ -461,12 +461,13 @@ p:has(time) {
 }
 
 .project-meta p {
+  color: var(--site-text);
   margin: 0;
-  color: var(--site-muted);
 }
 
-.project-meta__label {
-  color: var(--site-text);
+.project-meta p time,
+.project-meta p span {
+  color: var(--site-muted);
 }
 
 /* project pagination */

@@ -12,10 +12,10 @@
         </time>
       </p>
       {{ with .Params.status }}
-        <p>
-          <span class="project-meta__label">Status:</span>
-          <span>{{ . | humanize }}</span>
-        </p>
+      <p class="project-status">
+        Status:
+        <span>{{ . | humanize }}</span>
+      </p>
       {{ end }}
     {{ end }}
   </div>
