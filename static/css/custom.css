@@ -448,6 +448,11 @@ p:has(time) {
 .project-external {
   display: block;
   margin-top: 2px;
+  letter-spacing: 0.2em;
+}
+
+.project-external a {
+  letter-spacing: 0;
 }
 
 .project-date {
@@ -457,7 +462,7 @@ p:has(time) {
 
 /* Project metadata */
 .project-meta {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .project-meta p {

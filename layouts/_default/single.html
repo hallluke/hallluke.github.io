@@ -2,7 +2,7 @@
   <h1>{{ .Title }}</h1>
 
   {{ .Content }}
-
+  {{ partial "project-navigation.html" . }}
   {{ if eq .Section "projects" }}
     <div class="project-meta">
       <p class="project-date">
@@ -19,5 +19,4 @@
       {{ end }}
     {{ end }}
   </div>
-  {{ partial "project-navigation.html" . }}
 {{ end }}
