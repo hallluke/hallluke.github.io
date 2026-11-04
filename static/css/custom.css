@@ -525,6 +525,20 @@ p:has(time) {
 
 /* */
 
+.project-navigation a {
+  color: var(--site-text);
+  text-decoration: none;
+}
+
+.project-navigation__label {
+  color: var(--site-muted);
+}
+
+.project-navigation a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .project-navigation a:hover span:last-child {
   text-decoration: underline;
   text-decoration-thickness: 1px;
