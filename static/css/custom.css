@@ -316,7 +316,7 @@ main h1 {
 main h1::before {
   content: ":: ";
   white-space: pre;
-  color: var(--accent);
+  color: var(--site-accent);
 }
 
 /* Section headings: more space above than below */
