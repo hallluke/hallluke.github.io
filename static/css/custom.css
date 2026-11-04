@@ -237,29 +237,15 @@ body > main {
   margin-bottom: 12px;
 }
 
+/* =========================================
+   Site header and navigation
+   ========================================= */
+
 body > header {
   box-sizing: border-box;
   padding: 12px 32px 8px !important;
   margin: 0 !important;
 }
-
-body > footer {
-  padding: 12px 0 !important;
-  color: var(--site-panel);
-  font-size: 14px !important;
-}
-
-footer p {
-   margin: 0;
-}
-
-body > footer a {
-  color: var(--site-muted) !important;
-}
-
-/* =========================================
-   Site header and navigation
-   ========================================= */
 
 .site-header {
   display: flex;
@@ -298,6 +284,24 @@ body > footer a {
 .site-nav a:hover,
 .site-nav a:focus-visible {
   text-decoration: underline !important;
+}
+
+/* =========================================
+   Site footer
+   ========================================= */
+
+body > footer {
+  padding: 12px 0 !important;
+  color: var(--site-panel);
+  font-size: 14px !important;
+}
+
+footer p {
+   margin: 0;
+}
+
+body > footer a {
+  color: var(--site-muted) !important;
 }
 
 /* =========================================
@@ -359,24 +363,6 @@ main > :last-child {
 
 main hr {
   margin: 1.75rem 0;
-}
-
-/* =========================================
-   Responsive adjustments
-   ========================================= */
-
-@media (max-width: 600px) {
-  main {
-    padding: 20px 18px;
-  }
-
-  body > header {
-    padding: 12px 18px 8px !important;
-  }
-
-  body > main {
-    margin-top: 8px;
-  }
 }
 
 /* =========================================
@@ -616,5 +602,23 @@ p:has(time) {
 
   .error-marquee__track span:not(:first-child) {
     display: none;
+  }
+}
+
+/* =========================================
+   Responsive adjustments
+   ========================================= */
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px 18px;
+  }
+
+  body > header {
+    padding: 12px 18px 8px !important;
+  }
+
+  body > main {
+    margin-top: 8px;
   }
 }
