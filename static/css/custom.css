@@ -554,7 +554,8 @@ p:has(time) {
 }
 
 .site-tree__item--child {
-  margin-left: 3ch;
+  grid-template-columns: 7ch minmax(0, 1fr);
+  margin-left: 0;
 }
 
 .site-tree__branch {

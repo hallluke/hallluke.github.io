@@ -1,49 +1,51 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-
   <p>A directory of pages on this site.</p>
+
+  {{/* Assemble top-level pages in navigation order. */}}
+  {{ $pages := slice .Site.Home }}
+  {{ $projects := .Site.GetPage "/projects" }}
+
+  {{ with $projects }}
+    {{ $pages = $pages | append . }}
+  {{ end }}
+
+  {{/* Add other top-level content pages automatically. */}}
+  {{ $sitemap := . }}
+  {{ range (where .Site.RegularPages "Section" "").ByTitle }}
+    {{ if and (ne .RelPermalink $sitemap.RelPermalink) (not .Params.hideFromSitemap) }}
+      {{ $pages = $pages | append . }}
+    {{ end }}
+  {{ end }}
 
   <nav class="site-tree" aria-label="Sitemap">
     <div class="site-tree__root">
-      <a href="{{ .Site.Home.RelPermalink }}">{{ .Site.BaseURL | replaceRE "^https?://" "" | strings.TrimSuffix "/" }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}">
+        {{ .Site.BaseURL | replaceRE "^https?://" "" | strings.TrimSuffix "/" }}
+      </a>
     </div>
 
-    {{ with .Site.Home }}
-      <div class="site-tree__item">
-        <span class="site-tree__branch" aria-hidden="true">├──</span>
-        <a href="{{ .RelPermalink }}">Home</a>
-      </div>
-    {{ end }}
+    {{ range $i, $page := $pages }}
+      {{ $last := eq $i (sub (len $pages) 1) }}
 
-    {{ with .Site.GetPage "/about" }}
       <div class="site-tree__item">
-        <span class="site-tree__branch" aria-hidden="true">├──</span>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      </div>
-    {{ end }}
-
-    {{ with .Site.GetPage "/projects" }}
-      <div class="site-tree__item">
-        <span class="site-tree__branch" aria-hidden="true">├──</span>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+        <span class="site-tree__branch" aria-hidden="true">{{ if $last }}└──{{ else }}├──{{ end }}</span>
+        <a href="{{ $page.RelPermalink }}">{{ if $page.IsHome }}Home{{ else }}{{ $page.LinkTitle }}{{ end }}</a>
       </div>
 
-      {{ $projects := .RegularPages.ByTitle }}
-      {{ range $i, $project := $projects }}
-        <div class="site-tree__item site-tree__item--child">
-          <span class="site-tree__branch" aria-hidden="true">
-            {{ if eq $i (sub (len $projects) 1) }}└──{{ else }}├──{{ end }}
-          </span>
-          <a href="{{ $project.RelPermalink }}">{{ $project.LinkTitle }}</a>
-        </div>
+      {{/* Automatically list projects, newest first. */}}
+      {{ if and $projects (eq $page.RelPermalink $projects.RelPermalink) }}
+        {{ $projectPages := $projects.RegularPages.ByDate.Reverse }}
+
+        {{ range $j, $project := $projectPages }}
+          {{ $lastProject := eq $j (sub (len $projectPages) 1) }}
+
+          <div class="site-tree__item site-tree__item--child">
+            <span class="site-tree__branch" aria-hidden="true">{{ if $last }}    {{ else }}│   {{ end }}{{ if $lastProject }}└──{{ else }}├──{{ end }}</span>
+            <a href="{{ $project.RelPermalink }}">{{ $project.LinkTitle }}</a>
+          </div>
+        {{ end }}
       {{ end }}
-    {{ end }}
-
-    {{ with .Site.GetPage "/contact" }}
-      <div class="site-tree__item">
-        <span class="site-tree__branch" aria-hidden="true">└──</span>
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      </div>
     {{ end }}
   </nav>
 {{ end }}
