@@ -506,3 +506,35 @@ p:has(time) {
   margin-top: 1rem;
   color: var(--muted);
 }
+
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-navigation a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+  max-width: 48%;
+  text-decoration: none;
+}
+
+.project-navigation__next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.project-navigation__label {
+  font-size: 0.85em;
+  opacity: 0.7;
+}
+
+.project-navigation a:hover {
+  text-decoration: underline;
+}
