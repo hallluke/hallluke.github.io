@@ -62,7 +62,7 @@
 
 html {
   color: var(--site-text);
-  background-color: var(--site-background);
+  background-color: var(--site-background) !important;
   background-image:
     linear-gradient(to right, #d4dbd0 1px, transparent 1px),
     linear-gradient(to bottom, #d4dbd0 1px, transparent 1px);
@@ -74,14 +74,14 @@ html {
 }
 
 body {
-  background: transparent;
+  background: transparent !important;
   position: relative;
   isolation: isolate;
-  color: var(--site-text);
+  color: var(--site-text) !important;
   font-family: var(--body-font);
   padding-top: 15px;
   padding-bottom: 15px;
-  gap: 0;
+  gap: 0 !important;
   margin: 0;
 }
 
@@ -128,9 +128,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-header .site-name {
-  font-family: var(--heading-font);
-  font-weight: 600;
+header .site-name,
+header .site-name:hover {
+  font-family: var(--heading-font) !important;
+  font-weight: 600 !important;
 }
 
 /* Interface typography */
@@ -196,7 +197,7 @@ hr {
    ========================================= */
 
 main {
-  background: var(--site-panel);
+  background: var(--site-panel) !important;
   border: 1px solid var(--site-border);
   border-radius: 2px;
   box-shadow: 3px 3px 0 rgba(37, 43, 39, 0.09);
@@ -213,8 +214,8 @@ body > main {
    ========================================= */
 
 body > header {
-  padding: 12px 32px 8px;
-  margin: 0;
+  padding: 12px 32px 8px !important;
+  margin: 0 !important;
 }
 
 .site-header {
@@ -255,9 +256,9 @@ body > header {
    ========================================= */
 
 body > footer {
-  padding: 12px 0;
+  padding: 12px 0 !important;
   color: var(--site-panel);
-  font-size: 14px;
+  font-size: 14px !important;
 }
 
 footer p {
@@ -369,7 +370,7 @@ p:has(time) {
 .project-heading h2 {
   line-height: 1.4;
   text-transform: none;
-  margin: 2px 0 0;
+  margin: 0;
 }
 
 .project-heading time {
