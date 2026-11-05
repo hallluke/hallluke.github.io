@@ -14,7 +14,6 @@
   --site-muted: #899188;
 
   --body-font: "Tamzen", monospace;
-  --display-font: "Tamzen", monospace;
   --heading-font: "Space Grotesk", sans-serif;
 
   /* --container-width: 64ch; from theme CSS */
@@ -41,7 +40,6 @@
 }
 
 /* Tamzen bitmap font */
-
 @font-face {
   font-family: "Tamzen";
   src: url("/fonts/Tamzen8x16r.ttf") format("truetype");
@@ -130,9 +128,9 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-.site-name {
-  font-family: var(--heading-font) !important;
-  font-weight: 600 !important;
+header .site-name {
+  font-family: var(--heading-font);
+  font-weight: 600;
 }
 
 /* Interface typography */
@@ -143,7 +141,7 @@ footer,
 button,
 label,
 time {
-  font-family: var(--display-font) !important;
+  font-family: var(--body-font) !important;
   font-size: 16px;
 }
 
@@ -230,7 +228,7 @@ body > header {
 .site-name,
 .site-name:visited,
 .site-name:hover {
-  font-family: var(--display-font);
+  font-family: var(--body-font);
   font-size: 16px;
   font-weight: 400;
   color: var(--site-text) !important;
@@ -246,7 +244,7 @@ body > header {
 
 .site-nav a,
 .site-nav a:visited {
-  font-family: var(--display-font) !important;
+  font-family: var(--body-font) !important;
   font-size: 16px !important;
   font-weight: 400;
   text-transform: uppercase;
@@ -369,7 +367,7 @@ p:has(time) {
 }
 
 .project-heading h2 {
-  font-family: "Tamzen", monospace;
+  font-family: var(--body-font);
   font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
@@ -441,7 +439,7 @@ p:has(time) {
   min-width: 0;
   width: 100%;
   text-decoration: none !important;
-  color: var(--site-text) !important;
+  color: var(--site-accent) !important;
   font-size: 14px;
 }
 
