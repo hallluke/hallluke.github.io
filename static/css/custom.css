@@ -367,9 +367,10 @@ p:has(time) {
   row-gap: 2px;
 }
 
-.project-heading h2 {
+.project-heading h2,
+.featured-projects h3 {
   line-height: 1.4;
-  text-transform: none;
+  text-transform: none !important;
   margin: 0;
 }
 
