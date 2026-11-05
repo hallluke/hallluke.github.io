@@ -2,4 +2,24 @@
 title: "Home"
 ---
 
-ASCII art is cool! ~⎡ᐖ⎤ా
+{{ $featured := where
+    (where site.RegularPages "Section" "projects")
+    "Params.feature" true
+}}
+
+{{ with $featured }}
+<section class="featured-projects">
+  <h2>Featured projects</h2>
+
+  {{ range .ByWeight }}
+    <article class="featured-project">
+      <h3>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      {{ with .Description }}
+        <p>{{ . }}</p>
+      {{ end }}
+    </article>
+  {{ end }}
+</section>
+{{ end }}
