@@ -487,13 +487,13 @@ p:has(time) {
   margin-top: 2em;
 }
 
-.personal-media p {
+.personal-media p,
+.personal-media span {
   margin: 0;
   color: var(--site-muted);
 }
 
-.personal-media .media-label,
-.personal-media span {
+.personal-media .media-label {
   color: var(--site-text);
 }
 
