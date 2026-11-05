@@ -483,12 +483,29 @@ p:has(time) {
    ========================================= */
 
 .personal-media {
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-lg);
+  margin-top: 3em;
 }
 
 .personal-media p {
-  margin-top: var(--spacing-base);
+  margin: 0;
+  color: var(--site-muted);
+}
+
+.personal-media .media-label,
+.personal-media span {
+  color: var(--site-text);
+}
+
+.personnal-media a,
+.personnal-media a:visited {
+  color: var(--site-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.personnal-media a:hover {
+  color: var(--site-accent-hover);
+  text-decoration-thickness: 2px;
 }
 
 /* =========================================
