@@ -22,29 +22,23 @@
         <p>
           <span class="media-label">{{ $category.label }}:</span>
 
-          {{ range $index, $item := . }}
-            {{ if $index }}&nbsp;· {{ end }}
+          {{- range $index, $item := . -}}
+            {{- if $index }} · {{ end -}}
 
-            {{ if $item.url }}
-              <a href="{{ $item.url }}">
-            {{ end }}
+            {{- if $item.url }}<a href="{{ $item.url }}">{{ end -}}
+            {{- if in $italicTypes $item.type }}<span class="media-name">{{ end -}}
+            {{- $item.name -}}
+            {{- if in $italicTypes $item.type }}</span>{{ end -}}
+            {{- if $item.url }}</a>{{ end -}}
 
-            {{ if in $italicTypes $item.type }}<span class="media-highlight">{{ end }}
-            {{ $item.name }}
-            {{ if in $italicTypes $item.type }}</span>{{ end }}
+            {{- with $item.by }} by <span class="media-by">{{ . }}</span>{{ end -}}
+            {{- with $item.from }} from <span class="media-from">{{ . }}</span>{{ end -}}
+            {{- with $item.at }} @ <span class="media-at">{{ . }}</span>{{ end -}}
 
-            {{ if $item.url }}
-              </a>
-            {{ end }}
-
-            {{ with $item.by }} by {{ . }}{{ end }}
-            {{ with $item.from }} from {{ . }}{{ end }}
-            {{ with $item.at }} @ {{ . }}{{ end }}
-
-            {{ if eq $item.type "podcast" }} (podcast){{ end }}
-            {{ if eq $item.type "band" }} (band){{ end }}
+            {{- if eq $item.type "podcast" }} <span class="media-type"></span>(podcast)</span>{{ end -}}
+            {{- if eq $item.type "band" }} <span class="media-type"></span>(band)</span>{{ end -}}
             
-          {{ end }}
+          {{- end -}}
         </p>
       {{ end }}
     {{ end }}
