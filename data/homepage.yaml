@@ -22,7 +22,7 @@ reading:
     - name: "A Room of One's Own"
       type: book
       by: "Virginia Woolf"
-      date: "2027-11-05"
+      date: "2026-11-05"
 
     - name: "The Legend of Sleepy Hollow"
       type: book
@@ -41,11 +41,13 @@ listening:
     - name: "Corner Piece"
       type: podcast
       date: "2026-11-05"
+      url: "https://www.ted.com/podcasts/corner-piece"
 
     - name: "Adam Heron & Nina Savicevic"
       type: gig
       at: "St. George's"
       date: "2026-11-05"
+      url: "https://www.stgeorgesbristol.co.uk/whats-on/ltc-adam-heron-nina-savicevic/"
 
 viewing:
   label: "Viewing"
@@ -59,6 +61,7 @@ viewing:
     - name: "The Return of the Living Dead"
       type: film
       date: "2026-11-02"
+      url: "https://www.imdb.com/title/tt0089907/"
 
 # Examples to copy when populating the list
 
