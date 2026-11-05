@@ -29,11 +29,6 @@ reading:
       by: "Washington Irving"
       date: "2026-11-03"
 
-    - name: "The Legend of Sleepy Hollow"
-      type: book
-      by: "Washington Irving"
-      date: "2026-11-03"
-
 listening:
   label: "listening"
   items:

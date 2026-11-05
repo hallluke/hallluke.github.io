@@ -6,6 +6,10 @@ on:
       - master
   workflow_dispatch:
 
+  schedule:
+    - cron: "17 20 * * *"
+      timezone: "Europe/London"
+
 permissions:
   contents: read
   pages: write

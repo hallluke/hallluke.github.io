@@ -5,7 +5,7 @@
 
 <section class="personal-media">
 
-  {{ range slice $media.reading $media.listening $media.seen }}
+  {{ range slice $media.reading $media.listening $media.viewing }}
     {{ with . }}
       {{ $category := . }}
       {{ $eligible := slice }}
@@ -23,7 +23,7 @@
           <span class="media-label">{{ $category.label }}:</span>
 
           {{ range $index, $item := . }}
-            {{ if $index }} · {{ end }}
+            {{ if $index }}&nbsp;· {{ end }}
 
             {{ if $item.url }}
               <a href="{{ $item.url }}">
@@ -33,16 +33,17 @@
             {{ $item.name }}
             {{ if in $italicTypes $item.type }}</span>{{ end }}
 
+            {{ if $item.url }}
+              </a>
+            {{ end }}
+
             {{ with $item.by }} by {{ . }}{{ end }}
             {{ with $item.from }} from {{ . }}{{ end }}
             {{ with $item.at }} @ {{ . }}{{ end }}
 
             {{ if eq $item.type "podcast" }} (podcast){{ end }}
             {{ if eq $item.type "band" }} (band){{ end }}
-
-            {{ if $item.url }}
-              </a>
-            {{ end }}
+            
           {{ end }}
         </p>
       {{ end }}
