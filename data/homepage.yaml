@@ -32,31 +32,31 @@ reading:
 listening:
   label: "Listening"
   items:
+    - name: "Corner Piece"
+      type: podcast
+      date: "2026-11-05"
+      url: "https://www.ted.com/podcasts/corner-piece"
+
     - name: "Still Here, Somehow"
       type: album
       by: "Pen Name"
       date: "2026-11-05"
       url: "https://pennameuk.bandcamp.com/album/still-here-somehow"
 
-    - name: "Corner Piece"
-      type: podcast
-      date: "2026-11-05"
-      url: "https://www.ted.com/podcasts/corner-piece"
+viewing:
+  label: "Seeing"
+  items:
+    - name: "Dark Tales"
+      type: exhibition
+      at: "Martin Parr Foundation"
+      date: "2026-11-06"
+      url: "https://martinparrfoundation.org/exhibitions/dark-tales/"
 
     - name: "Adam Heron & Nina Savicevic"
       type: gig
       at: "St. George's"
       date: "2026-11-05"
       url: "https://www.stgeorgesbristol.co.uk/whats-on/ltc-adam-heron-nina-savicevic/"
-
-viewing:
-  label: "Viewing"
-  items:
-    - name: "Dark Tales"
-      type: exhibition
-      at: "Martin Parr Foundation"
-      date: "2026-11-05"
-      url: "https://martinparrfoundation.org/exhibitions/dark-tales/"
 
     - name: "The Return of the Living Dead"
       type: film
