@@ -401,7 +401,7 @@ p:has(time) {
 
 .project-date {
   margin-top: 1rem;
-  color: var(--muted);
+  color: var(--site-muted);
 }
 
 .project-links {
@@ -441,7 +441,7 @@ p:has(time) {
   min-width: 0;
   width: 100%;
   text-decoration: none !important;
-  color: var(--site-text);
+  color: var(--site-text) !important;
   font-size: 14px;
 }
 
@@ -452,17 +452,24 @@ p:has(time) {
 
 /* pagination styling */
 .project-navigation__label {
-  /*opacity: 0.7;*/
   color: var(--site-muted);
 }
 
-.project-navigation a:hover {
+.project-navigation a:hover,
+.project-navigation a:focus-visible {
   text-decoration: none !important;
-  color: var(--accent);
+  color: var(--site-accent-hover) !important;
 }
 
-.project-navigation a:hover span:last-child {
+.project-navigation a:hover span:last-child,
+.project-navigation a:focus-visible span:last-child {
   text-decoration: underline !important;
+  text-decoration-thickness: 1px !important;
+}
+
+.project-navigation a:hover .project-navigation__label,
+.project-navigation a:focus-visible .project-navigation__label {
+  color: var(--site-muted);
 }
 
 .project-navigation a span:last-child {
