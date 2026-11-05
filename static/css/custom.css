@@ -250,12 +250,6 @@ body > header {
   font-size: 16px !important;
   font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none !important;
-}
-
-.site-nav a:hover,
-.site-nav a:focus-visible {
-  text-decoration: underline !important;
 }
 
 /* =========================================
