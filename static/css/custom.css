@@ -479,6 +479,24 @@ p:has(time) {
 }
 
 /* =========================================
+   Homepage recent media
+   ========================================= */
+
+.personal-media {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--line);
+}
+
+.personal-media h2 {
+  /* Use the same heading treatment as your other section headings */
+}
+
+.personal-media p {
+  margin-top: var(--spacing-base);
+}
+
+/* =========================================
    Sitemap
    ========================================= */
    
