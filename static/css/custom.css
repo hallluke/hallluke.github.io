@@ -224,7 +224,6 @@ hr {
    ========================================= */
 
 main {
-  box-sizing: border-box;
   background: var(--site-panel) !important;
   border: 1px solid var(--site-border);
   border-radius: 2px;
@@ -242,7 +241,6 @@ body > main {
    ========================================= */
 
 body > header {
-  box-sizing: border-box;
   padding: 12px 32px 8px !important;
   margin: 0 !important;
 }
@@ -466,7 +464,6 @@ p:has(time) {
   margin-top: 3rem;
   width: 100%;
   min-width: 0;
-  box-sizing: border-box;
 }
 
 .project-navigation a {
@@ -475,7 +472,6 @@ p:has(time) {
   gap: 0;
   min-width: 0;
   width: 100%;
-  box-sizing: border-box;
   text-decoration: none !important;
   color: var(--site-text);
   font-size: 14px;
