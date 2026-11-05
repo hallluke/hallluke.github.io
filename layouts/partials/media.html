@@ -1,0 +1,52 @@
+
+{{ $media := site.Data.homepage }}
+{{ $today := now.Format "2006-01-02" }}
+{{ $italicTypes := $media.italicTypes }}
+
+<section class="personal-media">
+  <h2>A few recent things</h2>
+
+  {{ range slice $media.reading $media.listening $media.seen }}
+    {{ with . }}
+      {{ $category := . }}
+      {{ $eligible := slice }}
+
+      {{ range $category.items }}
+        {{ if and .date (le .date $today) }}
+          {{ $eligible = $eligible | append . }}
+        {{ end }}
+      {{ end }}
+
+      {{ $eligible = sort $eligible "date" "desc" }}
+
+      {{ with first 2 $eligible }}
+        <p>
+          <span class="media-label">{{ $category.label }}:</span>
+
+          {{ range $index, $item := . }}
+            {{ if $index }} · {{ end }}
+
+            {{ if $item.url }}
+              <a href="{{ $item.url }}">
+            {{ end }}
+
+            {{ if in $italicTypes $item.type }}<span class="media-highlight">{{ end }}
+            {{ $item.name }}
+            {{ if in $italicTypes $item.type }}</span>{{ end }}
+
+            {{ with $item.by }} by {{ . }}{{ end }}
+            {{ with $item.from }} from {{ . }}{{ end }}
+            {{ with $item.at }} @ {{ . }}{{ end }}
+
+            {{ if eq $item.type "podcast" }} (podcast){{ end }}
+            {{ if eq $item.type "band" }} (band){{ end }}
+
+            {{ if $item.url }}
+              </a>
+            {{ end }}
+          {{ end }}
+        </p>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</section>

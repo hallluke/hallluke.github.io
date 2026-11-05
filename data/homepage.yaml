@@ -1,0 +1,143 @@
+# =========================================
+# Media consumption list
+# =========================================
+
+# Types that require the name to be italicised
+
+italicTypes:
+  - book
+  - album
+  - song
+  - podcast_episode
+  - exhibition
+  - film
+  - theatre
+  - live_show
+
+# list of media by category
+
+reading:
+  label: "Reading"
+  items:
+    - name: "A Room of One's Own"
+      type: book
+      by: "Virginia Woolf"
+      date: "2027-12-01"
+
+    - name: "The Legend of Sleepy Hollow"
+      type: book
+      by: "Washington Irving"
+      date: "2026-11-03"
+
+    - name: "The Legend of Sleepy Hollow"
+      type: book
+      by: "Washington Irving"
+      date: "2026-11-03"
+
+listening:
+  label: "listening"
+  items:
+    - name: "Still Here, Somehow"
+      type: album
+      by: "Pen Name"
+      date: "2026-11-05"
+      url: "https://pennameuk.bandcamp.com/album/still-here-somehow"
+
+    - name: "Corner Piece"
+      type: podcast
+      date: "2026-11-05"
+
+    - name: "Adam Heron & Nina Savicevic"
+      type: gig
+      at: "St. George's"
+      date: "2026-11-05"
+
+viewing:
+  label: "Viewing"
+  items:
+    - name: "Dark Tales"
+      type: exhibition
+      at: "Martin Parr Foundation"
+      date: "2026-11-05"
+      url: "https://martinparrfoundation.org/exhibitions/dark-tales/"
+
+    - name: "The Return of the Living Dead"
+      type: film
+      date: "2026-11-02"
+
+# Examples to copy when populating the list
+
+_examples:
+    book:
+      name: "Book Title"
+      type: book
+      by: "Author Name"
+      date: "YYYY-MM-DD"
+
+    album:
+      name: "Album Title"
+      type: album
+      by: "Artist or Band"
+      date: "YYYY-MM-DD"
+
+    song:
+      name: "Song Title"
+      type: song
+      by: "Artist or Band"
+      date: "YYYY-MM-DD"
+
+    podcast:
+      name: "Podcast Name"
+      type: podcast
+      date: "YYYY-MM-DD"
+
+    podcast_episode:
+      name: "Episode Title"
+      type: podcast_episode
+      from: "Podcast Name"
+      date: "YYYY-MM-DD"
+
+    band:
+      name: "Band Name"
+      type: band
+      date: "YYYY-MM-DD"
+
+    gig:
+      name: "Performer or Band"
+      type: gig
+      at: "Venue Name"
+      date: "YYYY-MM-DD"
+
+    exhibition:
+      name: "Exhibition Title"
+      type: exhibition
+      by: "Artist Name"
+      at: "Gallery or Venue"
+      date: "YYYY-MM-DD"
+
+    film:
+      name: "Film Title"
+      type: film
+      by: "Director Name"
+      at: "Cinema or Venue"
+      date: "YYYY-MM-DD"
+
+    theatre:
+      name: "Production Title"
+      type: theatre
+      by: "Company or Writer"
+      at: "Theatre or Venue"
+      date: "YYYY-MM-DD"
+
+    live_show:
+      name: "Show Name"
+      type: live_show
+      by: "Performer or Company"
+      at: "Venue Name"
+      date: "YYYY-MM-DD"
+
+    museum:
+      name: "Museum Name"
+      type: museum
+      at: "Location"
+      date: "YYYY-MM-DD"
