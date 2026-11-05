@@ -2,33 +2,26 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
 
-  {{/*
-  {{ partial "ascii-art.html" . }}
-  */}}
-
   {{ .Content }}
 
-  {{/*
-  {{ $projects := where site.RegularPages "Section" "projects" }}
-  {{ $projects = first 3 ($projects.ByDate.Reverse) }}
+  {{ $featured := where
+    (where site.RegularPages "Section" "projects")
+    "Params.feature" true
+}}
 
-  {{ with $projects }}
-    <section class="selected-projects">
-      <h2>Selected Projects</h2>
+{{ with $featured }}
+<section class="featured-projects">
+  <h2>Featured projects</h2>
 
-      <ul>
-        {{ range . }}
-          <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            {{ with .Params.description }}
-              <p>{{ . }}</p>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
-
-      <p><a href="{{ "projects/" | relURL }}">All projects →</a></p>
-    </section>
+  {{ range .ByWeight }}
+    <article class="featured-project">
+      <h3>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      {{ with .Description }}
+        <p>{{ . }}</p>
+      {{ end }}
+    </article>
   {{ end }}
-  */}}
+</section>
 {{ end }}
