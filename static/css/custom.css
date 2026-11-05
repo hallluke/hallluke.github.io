@@ -62,7 +62,7 @@
 
 html {
   color: var(--site-text);
-  background-color: var(--site-background) !important;
+  background-color: var(--site-background);
   background-image:
     linear-gradient(to right, #d4dbd0 1px, transparent 1px),
     linear-gradient(to bottom, #d4dbd0 1px, transparent 1px);
@@ -74,14 +74,14 @@ html {
 }
 
 body {
-  background: transparent !important;
+  background: transparent;
   position: relative;
   isolation: isolate;
-  color: var(--site-text) !important;
+  color: var(--site-text);
   font-family: var(--body-font);
   padding-top: 15px;
   padding-bottom: 15px;
-  gap: 0 !important;
+  gap: 0;
   margin: 0;
 }
 
@@ -196,7 +196,7 @@ hr {
    ========================================= */
 
 main {
-  background: var(--site-panel) !important;
+  background: var(--site-panel);
   border: 1px solid var(--site-border);
   border-radius: 2px;
   box-shadow: 3px 3px 0 rgba(37, 43, 39, 0.09);
@@ -213,8 +213,8 @@ body > main {
    ========================================= */
 
 body > header {
-  padding: 12px 32px 8px !important;
-  margin: 0 !important;
+  padding: 12px 32px 8px;
+  margin: 0;
 }
 
 .site-header {
@@ -255,9 +255,9 @@ body > header {
    ========================================= */
 
 body > footer {
-  padding: 12px 0 !important;
+  padding: 12px 0;
   color: var(--site-panel);
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 footer p {
@@ -369,7 +369,7 @@ p:has(time) {
 .project-heading h2 {
   line-height: 1.4;
   text-transform: none;
-  margin: 0;
+  margin: 2px 0 0;
 }
 
 .project-heading time {
