@@ -24,12 +24,13 @@
 
           {{- range $index, $item := . -}}
             {{- if $index }} · {{ end -}}
-
-            {{- if in $italicTypes $item.type }}<span class="media-name">{{ end -}}
+            <span class="media-name">
+            {{- if in $italicTypes $item.type }}<span class="media-highlight">{{ end -}}
             {{- if $item.url }}<a href="{{ $item.url }}">{{ end -}}
             {{- $item.name -}}
             {{- if $item.url }}</a>{{ end -}}
             {{- if in $italicTypes $item.type }}</span>{{ end -}}
+            </span>
 
             {{- with $item.by }} by <span class="media-by">{{ . }}</span>{{ end -}}
             {{- with $item.from }} from <span class="media-from">{{ . }}</span>{{ end -}}

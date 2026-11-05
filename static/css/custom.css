@@ -370,6 +370,7 @@ p:has(time) {
 .project-heading h2,
 .featured-projects h3 {
   line-height: 1.4;
+  font-size: 14px !important;
   text-transform: none !important;
   margin: 0;
 }
@@ -494,6 +495,10 @@ p:has(time) {
 .personal-media .media-label,
 .personal-media span {
   color: var(--site-text);
+}
+
+.personal-media .media-highlight {
+  font-style: italic;
 }
 
 .personnal-media a,
