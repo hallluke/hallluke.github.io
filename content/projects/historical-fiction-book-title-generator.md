@@ -7,6 +7,7 @@ tags:
   - Generative
   - Creative Coding
 featured: true
+featuredOrder: 3
 draft: false
 description: "A playful generator of fictional historical novels, complete with titles and book covers."
 project_url_slug: "historical-fiction-generator"

@@ -7,7 +7,8 @@ tags:
   - JavaScript
   - Mapping
   - Geospatial
-featured: false
+featured: true
+featuredOrder: 2
 draft: false
 description: "An interactive map of art trail venues across East Bristol, from September 2026."
 project_url_slug: "bs5-art-trail-map"

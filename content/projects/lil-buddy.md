@@ -6,7 +6,7 @@ tags:
   - JavaScript
   - Generative
   - Creative Coding
-featured: true
+featured: false
 draft: false
 description: "A little tool for creating characters from Unicode symbols."
 project_url_slug: "lil-buddy"

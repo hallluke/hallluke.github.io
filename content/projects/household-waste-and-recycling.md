@@ -9,6 +9,7 @@ tags:
   - Data Visualisation
   - Information Design
 featured: true
+featuredOrder: 1
 draft: false
 description: "A visualisation of household waste and recycling collection data, updated automatically each day."
 project_url_slug: "data-and-design-work"
