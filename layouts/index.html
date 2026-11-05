@@ -8,8 +8,7 @@
 
   {{ with $featured }}
     <section class="featured-projects">
-      <h2>Featured projects</h2>
-
+      
       {{ range . }}
         <article>
           <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
