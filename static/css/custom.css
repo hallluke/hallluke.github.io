@@ -484,7 +484,7 @@ p:has(time) {
    ========================================= */
 
 .personal-media {
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .personal-media p {
@@ -519,7 +519,7 @@ p:has(time) {
    
 /* Sitemap directory tree */
 .site-tree {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: 14px;
   line-height: 1.5;
 }
@@ -549,7 +549,7 @@ p:has(time) {
 }
 
 .site-tree__summary {
-  margin: 1.5rem 0 1rem;
+  margin: 1rem 0;
   font-size: 14px;
   line-height: 1.5;
 }
