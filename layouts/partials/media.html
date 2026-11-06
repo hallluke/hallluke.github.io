@@ -4,7 +4,9 @@
 {{ $italicTypes := $media.italicTypes }}
 
 <section class="personal-media">
-
+  <p>
+    Recent media
+  </p>
   {{ range slice $media.reading $media.listening $media.viewing }}
     {{ with . }}
       {{ $category := . }}
