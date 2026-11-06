@@ -60,11 +60,6 @@ listening:
 viewing:
   label: "Seeing"
   items:
-    - name: "Pillow Fort"
-      type: gig
-      at: "Cafe Kino"
-      date: "2026-11-06"
-      url: "https://www.headfirstbristol.co.uk/whats-on/cafe-kino/fri-6-nov-pillow-fort-161875#/e161875"
 
     - name: "Dark Tales"
       type: exhibition

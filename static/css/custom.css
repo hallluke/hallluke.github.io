@@ -484,10 +484,10 @@ p:has(time) {
    ========================================= */
 
 .personal-media {
-  margin-top: 2em;
+  margin-top: 1rem;
 }
 
-.personal-media p,
+.personal-media .media-category,
 .personal-media span {
   margin: 0;
   color: var(--site-muted);
