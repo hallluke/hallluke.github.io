@@ -19,29 +19,49 @@
       {{ $eligible = sort $eligible "date" "desc" }}
 
       {{ with first 3 $eligible }}
-        <p>
+        <p class="media-category">
           <span class="media-label">{{ $category.label }}: </span>
 
           {{- range $index, $item := . -}}
-            {{- if $index }} · {{ end -}}
-            <span class="media-name">
-            {{- if in $italicTypes $item.type }}<span class="media-highlight">{{ end -}}
-            {{- if $item.url }}<a href="{{ $item.url }}">{{ end -}}
-            {{- $item.name -}}
-            {{- if $item.url }}</a>{{ end -}}
-            {{- if in $italicTypes $item.type }}</span>{{ end -}}
+            <!-- {{- if $index }} · {{ end -}} -->
+            <span class="media-item {{ if eq $index 0 }}active-entry{{ else }}hidden-entry{{ end }}">
+              <span class="media-name">
+              {{- if in $italicTypes $item.type }}<span class="media-highlight">{{ end -}}
+              {{- if $item.url }}<a href="{{ $item.url }}">{{ end -}}
+              {{- $item.name -}}
+              {{- if $item.url }}</a>{{ end -}}
+              {{- if in $italicTypes $item.type }}</span>{{ end -}}
+              </span>
+
+              {{- with $item.by }} by <span class="media-by">{{ . }}</span>{{ end -}}
+              {{- with $item.from }} from <span class="media-from">{{ . }}</span>{{ end -}}
+              {{- with $item.at }} @ <span class="media-at">{{ . }}</span>{{ end -}}
+
+              {{- if eq $item.type "podcast" }} <span class="media-type">(podcast)</span>{{ end -}}
+              {{- if eq $item.type "band" }} <span class="media-type">(band)</span>{{ end -}}
             </span>
-
-            {{- with $item.by }} by <span class="media-by">{{ . }}</span>{{ end -}}
-            {{- with $item.from }} from <span class="media-from">{{ . }}</span>{{ end -}}
-            {{- with $item.at }} @ <span class="media-at">{{ . }}</span>{{ end -}}
-
-            {{- if eq $item.type "podcast" }} <span class="media-type">(podcast)</span>{{ end -}}
-            {{- if eq $item.type "band" }} <span class="media-type">(band)</span>{{ end -}}
-            
           {{- end -}}
         </p>
       {{ end }}
     {{ end }}
   {{ end }}
 </section>
+<script>
+(function() {
+  document.querySelectorAll('.media-category').forEach(function(med_item) {
+    var items = med_item.querySelectorAll('.media-item');
+    if (items.length > 1) {
+      var chosenIndex = Math.floor(Math.random() * items.length);
+      items.forEach(function(el, i) {
+        if (i === chosenIndex) {
+          el.classList.remove('hidden-entry');
+          el.classList.add('active-entry');
+        } else {
+          el.classList.add('hidden-entry');
+          el.classList.remove('active-entry');
+        }
+      });
+    }
+  });
+})();
+</script>

@@ -497,20 +497,35 @@ p:has(time) {
   color: var(--site-text);
 }
 
-.personal-media .media-highlight {
+/*.personal-media .media-highlight {
   font-style: italic;
-}
+}*/
 
-.personnal-media a,
-.personnal-media a:visited {
+.personal-media a,
+.personal-media a:visited {
   color: var(--site-accent);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.personnal-media a:hover {
+.personal-media a:hover {
   color: var(--site-accent-hover);
   text-decoration-thickness: 2px;
+}
+
+/* FOUC prevention & transition */
+.personal-media .media-item.hidden-entry {
+  display: none !important;
+}
+
+.personal-media .media-item.active-entry {
+  display: block;
+  animation: mediaFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes mediaFadeIn {
+  from { opacity: 0; transform: translateY(2px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================
