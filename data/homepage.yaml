@@ -23,11 +23,13 @@ reading:
       type: book
       by: "Virginia Woolf"
       date: "2026-11-05"
+      url: "https://openlibrary.org/books/OL58393454M/"
 
     - name: "The Legend of Sleepy Hollow"
       type: book
       by: "Washington Irving"
       date: "2026-11-03"
+      url: "https://openlibrary.org/books/OL529589M/"
 
 listening:
   label: "Listening"
@@ -61,7 +63,7 @@ viewing:
     - name: "The Return of the Living Dead"
       type: film
       date: "2026-11-02"
-      url: "https://www.imdb.com/title/tt0089907/"
+      url: "https://www.themoviedb.org/movie/10925-the-return-of-the-living-dead"
 
 # Examples to copy when populating the list
 
