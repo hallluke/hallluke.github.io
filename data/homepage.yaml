@@ -31,6 +31,12 @@ reading:
       date: "2026-11-03"
       url: "https://openlibrary.org/books/OL529589M/"
 
+    - name: "Polostan"
+      type: book
+      by: "Neal Stephenson"
+      date: "2026-10-05"
+      url: "https://openlibrary.org/works/OL25225536W/"
+
 listening:
   label: "Listening"
   items:
@@ -45,9 +51,21 @@ listening:
       date: "2026-11-05"
       url: "https://pennameuk.bandcamp.com/album/still-here-somehow"
 
+    - name: "Future Nausea" 
+      type: album
+      by: "Spanish Love Songs"
+      date: "2026-11-06"
+      url: "https://spanishlovesongs.bandcamp.com/album/future-nausea"
+
 viewing:
   label: "Seeing"
   items:
+    - name: "Pillow Fort"
+      type: gig
+      at: "Cafe Kino"
+      date: "2026-11-06"
+      url: "https://www.headfirstbristol.co.uk/whats-on/cafe-kino/fri-6-nov-pillow-fort-161875#/e161875"
+
     - name: "Dark Tales"
       type: exhibition
       at: "Martin Parr Foundation"
