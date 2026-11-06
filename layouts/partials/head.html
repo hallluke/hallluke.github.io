@@ -61,6 +61,16 @@ Articles */}} {{ if .IsPage }}
     {{- end }}
   }
 </script>
+<script>
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t)
+            window.goatcounter.visit_count({append: 'body'})
+        }
+    }, 100)
+</script>
+<script data-goatcounter="https://lukehall.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 {{ end }} {{ partialCached "head/favicon.html" . }} {{ partialCached
 "head/css.html" . }}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
