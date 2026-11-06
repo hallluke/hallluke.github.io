@@ -519,13 +519,19 @@ p:has(time) {
 }
 
 .personal-media .media-item.active-entry {
-  display: block;
+  display: inline;
   animation: mediaFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes mediaFadeIn {
-  from { opacity: 0; transform: translateY(2px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .personal-media .media-item.active-entry {
+    animation: none;
+  }
 }
 
 /* =========================================
