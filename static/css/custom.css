@@ -146,6 +146,11 @@ time {
   font-size: 16px;
 }
 
+::selection {
+  background: color-mix(in oklch, var(--site-accent) 40%, transparent);
+  color: var(--site-text);
+}
+
 /* =========================================
    Links and separators
    ========================================= */
