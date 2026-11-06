@@ -493,6 +493,14 @@ p:has(time) {
   color: var(--site-muted);
 }
 
+.personal-media .media-category {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
 .personal-media .media-label {
   color: var(--site-text);
 }
