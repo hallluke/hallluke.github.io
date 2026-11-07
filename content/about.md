@@ -10,4 +10,4 @@ I like working on projects that involve both analytical and creative thinking, f
 
 I'm a data analyst based in Bristol, UK. Outside work, I spend my time enjoying live music, running, cycling and volunteering locally.
 
-[![Personal Data Visualization Society member button](/static/assets/88x31.gif "DVS member button")](https://datavisualizationsociety.org/)
+[![Personal Data Visualization Society member button](/assets/88x31.gif "DVS member button")](https://datavisualizationsociety.org/)
