@@ -9,7 +9,7 @@ tags:
 featured: true
 featuredOrder: 3
 draft: false
-description: "A playful generator of fictional historical novels, complete with descriptions, reviews and illustrated book spines."
+description: "A playful novel generator, complete with descriptions, reviews and illustrated book spines."
 project_url_slug: "historical-fiction-generator"
 project_link_label: "Try the generator"
 ---

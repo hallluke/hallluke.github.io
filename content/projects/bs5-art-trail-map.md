@@ -10,7 +10,7 @@ tags:
 featured: true
 featuredOrder: 2
 draft: false
-description: "An interactive map of the September 2026 art trail venues in East Bristol, integrating exhibitor details from the event brochure."
+description: "An interactive map of a recent, local art trail, including exhibitor details from the event brochure."
 project_url_slug: "bs5-art-trail-map"
 project_link_label: "View the map"
 ---
