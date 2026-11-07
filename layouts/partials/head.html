@@ -61,6 +61,7 @@ Articles */}} {{ if .IsPage }}
     {{- end }}
   }
 </script>
+{{ end }}
 <!--<script>
     var t = setInterval(function() {
         if (window.goatcounter && window.goatcounter.visit_count) {
@@ -68,9 +69,12 @@ Articles */}} {{ if .IsPage }}
             window.goatcounter.visit_count({append: 'body'})
         }
     }, 100)
+</script> -->
+<script
+  data-goatcounter="https://lukehall.goatcounter.com/count"
+  async
+  src="https://gc.zgo.at/count.js">
 </script>
-<script data-goatcounter="https://lukehall.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script> -->
-{{ end }} {{ partialCached "head/favicon.html" . }} {{ partialCached
-"head/css.html" . }}
+{{ partialCached "head/favicon.html" . }}
+{{ partialCached "head/css.html" . }}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
