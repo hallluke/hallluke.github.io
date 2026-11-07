@@ -9,7 +9,7 @@ tags:
   - Creative Coding
 featured: false
 draft: false
-description: "Rules, randomness and recombination used to turn lists of words and phrases into something more interesting."
+description: "A collection of imaginative little text generators ranging from thoughtful to useful to nonsensical."
 project_url_slug: "tracery-experiments"
 project_link_label: "Visit the collection"
 ---
