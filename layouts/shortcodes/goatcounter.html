@@ -1,27 +1,30 @@
-
-<div class="site-visitor-counter" id="site-visitor-counter"></div>
+<div class="site-visitor-counter">
+  <span class="site-visitor-counter__label">Homepage views:</span>
+  <span class="site-visitor-counter__number" id="homepage-views">—</span>
+</div>
 
 <script>
-(function () {
-  const timer = setInterval(function () {
-    if (!window.goatcounter?.visit_count) return;
+(() => {
+  const counter = document.getElementById("homepage-views");
+  if (!counter) return;
 
-    clearInterval(timer);
+  fetch("https://lukehall.goatcounter.com/counter//.json")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`GoatCounter HTTP ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      if (typeof data.count !== "string") {
+        throw new Error("Unexpected GoatCounter response");
+      }
 
-    window.goatcounter.visit_count({
-    append: "#site-visitor-counter",
-    type: "html",
-    path: "/",
-    attr: {
-      width: "200",
-      height: "80"
-    },
-    style: "div { background: red; }"
+      counter.textContent = data.count.replace(/,/g, "");
+    })
+    .catch(error => {
+      console.warn("Could not load homepage count:", error);
+      counter.textContent = "—";
     });
-  }, 100);
-
-  setTimeout(function () {
-    clearInterval(timer);
-  }, 10000);
 })();
 </script>

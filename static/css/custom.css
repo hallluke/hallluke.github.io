@@ -646,15 +646,24 @@ p:has(time) {
 
 .site-visitor-counter {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 0.6rem;
   margin: 1.5rem 0;
+  font-family: inherit;
+  font-size: 14px;
 }
 
-.site-visitor-counter iframe {
-  display: block;
-  max-width: 100%;
-  border: 0;
+.site-visitor-counter__label {
+  color: var(--site-text);
 }
+
+.site-visitor-counter__number {
+  color: var(--site-accent);
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
 
 /* =========================================
    Responsive adjustments
