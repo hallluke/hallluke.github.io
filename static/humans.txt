@@ -1,0 +1,9 @@
+/* SITE */
+    URL: https://lukehall.co
+	Language: English
+    Description: A personal website and collection of projects.
+    Author: Luke Hall
+    Location: Bristol, UK
+	Likes: tea, cats, piano
+    Dislikes: ads, selfies, pigeons
+    EOF: 73
