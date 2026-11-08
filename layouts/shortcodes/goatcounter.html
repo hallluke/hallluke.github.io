@@ -1,4 +1,4 @@
-<div class="site-visitor-counter">
+<div class="site-visitor-counter" hidden>
   <span class="site-visitor-counter__number" id="homepage-views" aria-live="off">—</span>
   <span class="site-visitor-counter__label">Page views</span>
 </div>
@@ -21,6 +21,10 @@
       }
 
       const digits = data.count.replace(/\D/g, "");
+      
+      if (!digits) {
+        throw new Error("Empty GoatCounter count");
+      }
 
       counter.replaceChildren();
 
@@ -36,10 +40,12 @@
         "aria-label",
         `${digits} homepage views`
       );
+
+      counter.closest(".site-visitor-counter").hidden = false;
     })
     .catch(error => {
       console.warn("Could not load homepage count:", error);
-      counter.textContent = "—";
+      // counter.textContent = "—";
     });
 })();
 </script>

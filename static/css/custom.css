@@ -659,7 +659,7 @@ main:has(.site-visitor-counter) {
 }
 
 .site-visitor-counter__label {
-  color: var(--site-text);
+  color: var(--site-muted);
   font-size: 14px;
 }
 
@@ -696,6 +696,10 @@ main:has(.site-visitor-counter) {
   height: 1px;
   background: color-mix(in oklch, var(--site-text) 85%, transparent);
   pointer-events: none;
+}
+
+.site-visitor-counter[hidden] {
+  display: none;
 }
 
 /* =========================================
