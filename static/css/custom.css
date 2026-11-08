@@ -641,6 +641,20 @@ p:has(time) {
 }
 
 /* =========================================
+   Goatcounter
+   ========================================= */
+
+.site-visitor-counter {
+  margin: 2rem 0 0;
+  max-width: 100%;
+}
+
+.site-visitor-counter iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================
    Responsive adjustments
    ========================================= */
 
