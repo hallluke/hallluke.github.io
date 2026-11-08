@@ -1,6 +1,6 @@
 <div class="site-visitor-counter">
-  <span class="site-visitor-counter__label">Homepage views:</span>
-  <span class="site-visitor-counter__number" id="homepage-views">—</span>
+  <span class="site-visitor-counter__label">Visitor count</span>
+  <span class="site-visitor-counter__number" id="homepage-views" aria-live="off">—</span>
 </div>
 
 <script>
@@ -20,7 +20,22 @@
         throw new Error("Unexpected GoatCounter response");
       }
 
-      counter.textContent = data.count.replace(/,/g, "");
+      const digits = data.count.replace(/\D/g, "");
+
+      counter.replaceChildren();
+
+      for (const digit of digits) {
+        const span = document.createElement("span");
+        span.className = "site-visitor-counter__digit";
+        span.textContent = digit;
+        span.setAttribute("aria-hidden", "true");
+        counter.appendChild(span);
+      }
+
+      counter.setAttribute(
+        "aria-label",
+        `${digits} homepage views`
+      );
     })
     .catch(error => {
       console.warn("Could not load homepage count:", error);

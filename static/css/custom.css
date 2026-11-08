@@ -644,26 +644,53 @@ p:has(time) {
    Goatcounter
    ========================================= */
 
-.site-visitor-counter {
+   .site-visitor-counter {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   margin: 1.5rem 0;
-  font-family: inherit;
-  font-size: 14px;
 }
 
 .site-visitor-counter__label {
   color: var(--site-text);
+  font-size: 14px;
 }
 
 .site-visitor-counter__number {
-  color: var(--site-accent);
-  font-weight: bold;
-  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  gap: 3px;
+  font-family: monospace;
 }
 
+.site-visitor-counter__digit {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 38px;
+  overflow: hidden;
+  background: var(--site-text);
+  border: 1px solid #171c19;
+  border-radius: 2px;
+  color: var(--site-background);
+  font-size: 22px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.site-visitor-counter__digit::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #101510;
+  pointer-events: none;
+}
 
 /* =========================================
    Responsive adjustments
