@@ -9,29 +9,40 @@
     clearInterval(timer);
 
     window.goatcounter.visit_count({
-      append: "#site-visitor-counter",
-      type: "html",
-      path: "/",
-      style: `
-        div {
-          background: #fbfbf8;
-          color: #252b27;
-          border: 1px solid #bfc5ba;
-          font-family: monospace;
-        }
-        #gcvc-for {
-          color: #252b27;
-        }
-        #gcvc-views {
-          color: #526b46;
-          font-size: 24px;
-          font-weight: bold;
-        }
-        #gcvc-by {
-          color: #526b46;
-        }
-      `
-    });
+    append: "#site-visitor-counter",
+    type: "html",
+    path: "/",
+    attr: {
+      width: "200",
+      height: "80"
+    },
+    style: `
+      div {
+        box-sizing: border-box;
+        background: #fbfbf8;
+        border: 1px solid #bfc5ba;
+        border-radius: 0;
+        color: #252b27;
+        font-family: monospace;
+        text-align: center;
+      }
+
+      #gcvc-for {
+        color: #252b27;
+        font-size: 12px;
+      }
+
+      #gcvc-views {
+        color: #526b46;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      #gcvc-by {
+        color: #526b46;
+        font-size: 10px;
+      }
+    `});
   }, 100);
 
   setTimeout(function () {

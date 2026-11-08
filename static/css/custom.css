@@ -645,13 +645,15 @@ p:has(time) {
    ========================================= */
 
 .site-visitor-counter {
-  margin: 2rem 0 0;
-  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
 }
 
 .site-visitor-counter iframe {
   display: block;
   max-width: 100%;
+  border: 0;
 }
 
 /* =========================================
