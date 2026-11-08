@@ -1,41 +1,10 @@
-
-<div class="site-visitor-counter" id="site-visitor-counter"></div>
-
-<script>
-(function () {
-  const timer = setInterval(function () {
-    if (!window.goatcounter?.visit_count) return;
-
-    clearInterval(timer);
-
-    window.goatcounter.visit_count({
-      append: "#site-visitor-counter",
-      type: "html",
-      path: "/",
-      style: `
-        div {
-          background: #fbfbf8;
-          color: #252b27;
-          border: 1px solid #bfc5ba;
-          font-family: monospace;
-        }
-        #gcvc-for {
-          color: #252b27;
-        }
-        #gcvc-views {
-          color: #526b46;
-          font-size: 24px;
-          font-weight: bold;
-        }
-        #gcvc-by {
-          color: #526b46;
-        }
-      `
-    });
-  }, 100);
-
-  setTimeout(function () {
-    clearInterval(timer);
-  }, 10000);
-})();
-</script>
+<div class="site-visitor-counter">
+  <iframe
+    src="https://lukehall.goatcounter.com/counter//.html"
+    title="Homepage visit count"
+    width="200"
+    height="80"
+    loading="lazy"
+    style="border: 0;">
+  </iframe>
+</div>
