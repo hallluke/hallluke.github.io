@@ -2,7 +2,7 @@
    Colour palette and typography
    ========================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap");
 
 :root {
   --site-background: #e8e9e5;
@@ -19,24 +19,14 @@
   /* --container-width: 64ch; from theme CSS */
   --grid-columns: 26;
   --strip-padding-cells: 2;
-  --content-width: min(
-    var(--container-width),
-    calc(100vw - 2 * var(--spacing-lg))
-  );
+  --content-width: min(var(--container-width), calc(100vw - 2 * var(--spacing-lg)));
   --grid-size: round(
     nearest,
-    calc(
-      var(--content-width) /
-      (var(--grid-columns) - 2 * var(--strip-padding-cells))
-    ),
+    calc(var(--content-width) / (var(--grid-columns) - 2 * var(--strip-padding-cells))),
     1px
   );
-  --strip-padding: calc(
-    var(--grid-size) * var(--strip-padding-cells)
-  );
-  --strip-width: calc(
-    var(--grid-size) * var(--grid-columns)
-  );
+  --strip-padding: calc(var(--grid-size) * var(--strip-padding-cells));
+  --strip-width: calc(var(--grid-size) * var(--grid-columns));
 }
 
 /* Tamzen bitmap font */
@@ -105,7 +95,12 @@ footer,
 nav,
 p,
 li,
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--site-text);
 }
 
@@ -119,7 +114,12 @@ main blockquote {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font) !important;
   font-size: 16px !important;
   font-weight: 600 !important;
@@ -256,6 +256,27 @@ body > header {
   text-transform: uppercase;
 }
 
+.site-nav a,
+.site-nav a:visited {
+  font-family: var(--body-font) !important;
+  font-size: 16px !important;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.site-nav a {
+  padding: 0 3px;
+}
+.site-nav {
+  gap: 8px 10px;
+}
+.site-nav a:hover,
+.site-header .site-name:hover {
+  background: color-mix(in oklch, var(--site-accent) 40%, transparent);
+  text-decoration: none !important;
+  border: 0;
+  box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
+}
+
 /* =========================================
    Site footer
    ========================================= */
@@ -267,7 +288,7 @@ body > footer {
 }
 
 footer p {
-   margin: 0;
+  margin: 0;
 }
 
 body > footer a {
@@ -361,7 +382,6 @@ p:has(time) {
 .project-entry p {
   margin: 0 0 8px;
 }
-
 
 /* Project title and date */
 .project-heading {
@@ -537,8 +557,12 @@ p:has(time) {
 }
 
 @keyframes mediaFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -550,7 +574,7 @@ p:has(time) {
 /* =========================================
    Sitemap
    ========================================= */
-   
+
 /* Sitemap directory tree */
 .site-tree {
   margin-top: 1rem;
