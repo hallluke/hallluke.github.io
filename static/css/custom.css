@@ -277,6 +277,13 @@ body > header {
   box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
 }
 
+.site-nav a.active::before {
+  content: "\00BB";
+  position: relative;
+  left: -3px;
+  top: -1px;
+}
+
 /* =========================================
    Site footer
    ========================================= */
