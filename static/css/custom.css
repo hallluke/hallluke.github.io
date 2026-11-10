@@ -285,6 +285,23 @@ body > header {
   top: -2px;
 }
 
+.site-nav a.active:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-nav a.active:hover::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -0.8rem;
+  right: 0;
+  background: color-mix(in oklch, var(--site-accent) 40%, transparent);
+  box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
+}
+
 /* =========================================
    Site footer
    ========================================= */
