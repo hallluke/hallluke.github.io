@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chart-no-axes-combined preview-icon"><path d="M12 16v5"/><path d="M16 14.639V21"/><path d="M20 10.656V21"/><path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"/><path d="M4 18.463V21"/><path d="M8 14.656V21"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-letter-l preview-icon">
+  <path d="M 7.312 7.793 L 7.312 15.293 C 7.312 15.569 7.536 15.793 7.812 15.793 L 13.312 15.793" style="stroke: rgb(37, 43, 39);"/>
+  <g>
+    <path d="M 15.904 15.777 L 15.904 7.777" style="stroke-width: 2px; stroke: rgb(37, 43, 39);"/>
+    <path d="M 21.904 15.777 L 21.904 7.777" style="stroke-width: 2px; stroke: rgb(37, 43, 39);"/>
+    <path d="M 15.904 11.777 L 21.904 11.777" style="stroke-width: 2px; stroke: rgb(37, 43, 39); transform-origin: 18.904px 11.777px 0px;"/>
+  </g>
+  <g>
+    <g transform="matrix(1, 0, 0, 1, -0.585188, 0.073149)">
+      <ellipse style="stroke-width: 1px; stroke: rgb(53, 77, 45); fill: rgb(53, 77, 45);" cx="5.047" cy="10.279" rx="0.323" ry="0.249"/>
+      <ellipse style="stroke-width: 1px; stroke: rgb(53, 77, 45); fill: rgb(53, 77, 45);" cx="5.055" cy="13.634" rx="0.323" ry="0.249"/>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1, -0.195063, 0)">
+    <g transform="matrix(1, 0, 0, 1, -2.80048, 0.117078)">
+      <ellipse style="stroke-width: 1px; stroke: rgb(53, 77, 45); fill: rgb(53, 77, 45);" cx="5.047" cy="10.279" rx="0.323" ry="0.249"/>
+      <ellipse style="stroke-width: 1px; stroke: rgb(53, 77, 45); fill: rgb(53, 77, 45);" cx="5.055" cy="13.634" rx="0.323" ry="0.249"/>
+    </g>
+  </g>
+</svg>
