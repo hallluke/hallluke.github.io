@@ -16,17 +16,17 @@ title = "Luke Hall"
 
   [[menu.main]]
     name = "Projects"
-    url = "/projects/"
+    pageRef = "/projects"
     weight = 1
 
   [[menu.main]]
     name = "About"
-    url = "/about/"
+    pageRef = "/about"
     weight = 2
 
   [[menu.main]]
     name = "Contact"
-    url = "/contact/"
+    pageRef = "/contact"
     weight = 3
 
 [markup.goldmark.renderer]
