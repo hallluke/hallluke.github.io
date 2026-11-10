@@ -278,10 +278,14 @@ body > header {
 }
 
 .site-nav a.active::before {
-  content: "\00BB";
+  content: "::";
+  font-family: var(--heading-font);
+  color: color-mix(in oklch, var(--site-text) 80%, transparent);
+  font-weight: 600;
+  line-height: 0.8rem;
   position: relative;
-  left: -3px;
-  top: -1px;
+  left: -2px;
+  top: -0.5px;
 }
 
 /* =========================================
