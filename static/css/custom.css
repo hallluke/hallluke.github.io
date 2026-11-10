@@ -258,7 +258,7 @@ body > header {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 15px;
+  gap: 8px 16px;
 }
 
 .site-nav a {
@@ -281,7 +281,7 @@ body > header {
   color: color-mix(in oklch, var(--site-text) 80%, transparent);
   font-weight: 600;
   position: absolute;
-  left: -0.6rem;
+  left: -0.5rem;
   top: -2px;
 }
 
@@ -296,7 +296,7 @@ body > header {
   z-index: -1;
   top: 0;
   bottom: 0;
-  left: -0.8rem;
+  left: -0.7rem;
   right: 0;
   background: color-mix(in oklch, var(--site-accent) 40%, transparent);
   box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
