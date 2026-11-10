@@ -438,13 +438,11 @@ p:has(time) {
 .project-external {
   display: block;
   margin-top: 2px;
-  letter-spacing: 0.2em;
   white-space: nowrap;
 }
 
 .project-external a {
   font-size: 14px;
-  letter-spacing: 0;
 }
 
 .project-date {
@@ -470,6 +468,16 @@ p:has(time) {
 .project-meta p time,
 .project-meta p span {
   color: var(--site-muted);
+}
+
+.project-external::before {
+  content: "[";
+  margin-right: 0.4rem;
+}
+
+.project-external::after {
+  content: "]";
+  margin-left: 0.2rem;
 }
 
 /* project pagination */
