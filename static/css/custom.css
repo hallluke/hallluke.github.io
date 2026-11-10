@@ -231,6 +231,12 @@ body > header {
   gap: 8px 24px;
 }
 
+.site-name {
+  padding: 0 2px;
+  left: -2px;
+  position: relative;
+}
+
 .site-name,
 .site-name:visited,
 .site-name:hover {
@@ -266,9 +272,13 @@ body > header {
 .site-nav a {
   padding: 0 3px;
 }
+
 .site-nav {
-  gap: 8px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 15px;
 }
+
 .site-nav a:hover,
 .site-header .site-name:hover {
   background: color-mix(in oklch, var(--site-accent) 40%, transparent);
@@ -282,10 +292,9 @@ body > header {
   font-family: var(--heading-font);
   color: color-mix(in oklch, var(--site-text) 80%, transparent);
   font-weight: 600;
-  line-height: 0.8rem;
-  position: relative;
-  left: -2px;
-  top: -0.5px;
+  position: absolute;
+  right: calc(100% - 1.5px);
+  top: -2px;
 }
 
 /* =========================================
