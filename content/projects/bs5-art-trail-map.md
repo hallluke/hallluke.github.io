@@ -19,9 +19,17 @@ gallery:
     alt: "Map showing colour-coded art trail locations across the BS5 area"
     caption: "Overview: venues across the BS5 area"
     featured: true
+    thumbnail:
+      zoom: 2.86
+      x: 20
+      y: 2
   - src: "venue-popup.png"
     alt: "Close-up of the BS5 art trail map showing an example of the information popup"
     caption: "Detail: selected venue information"
+    thumbnail:
+      zoom: 2.4
+      x: 20
+      y: 19
 ---
 
 I made this alternative map before visiting the BS5 Art Trail because I found the official map difficult to use. Large markers obscured nearby streets, locations were grouped together even when zoomed in, and viewing artist information meant leaving the map. I wanted something that made it easier to navigate between venues and learn about the exhibitors.

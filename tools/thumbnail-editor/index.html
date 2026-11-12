@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thumbnail crop editor</title>
+<style>
+:root { --bg:#e8e9e5; --panel:#fafaf7; --ink:#252b27; --green:#526b46; --hover:#354d2d; --line:#bfc5ba; --muted:#697367; font-family:ui-monospace,SFMono-Regular,Consolas,monospace; color:var(--ink); }
+* { box-sizing:border-box; }
+body { background:var(--bg); margin:0; padding:24px 16px 64px; }
+main { max-width:860px; margin:auto; }
+h1,h2 { font-family:system-ui,sans-serif; letter-spacing:-.02em; }
+h1 { font-size:clamp(1.5rem,4vw,2rem); margin:0 0 6px; }
+h2 { font-size:1.1rem; margin:0 0 18px; }
+p { line-height:1.55; }
+.lede { color:var(--muted); margin:0 0 22px; max-width:70ch; font-size:.88rem; }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:2px; padding:22px; box-shadow:3px 3px 0 rgb(37 43 39 / 7%); margin-bottom:18px; }
+.grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(260px,1fr); gap:28px; }
+@media(max-width:675px) { .grid{grid-template-columns:1fr} .card{padding:16px} }
+label { display:block; font-size:.83rem; font-weight:650; margin-bottom:7px; }
+select, button, input[type=file], textarea { font:inherit; }
+select,button { min-height:36px; border:1px solid var(--line); color:var(--ink); background:var(--panel); border-radius:2px; }
+select { padding:7px 9px; width:100%; }
+button { padding:7px 12px; cursor:pointer; }
+button:hover { border-color:var(--green); color:var(--hover); }
+button:focus-visible, select:focus-visible, input:focus-visible,textarea:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+input[type=file] { max-width:100%; font-size:.8rem; }
+.field { margin-bottom:18px; }
+.field-heading { display:flex; gap:8px; align-items:baseline; justify-content:space-between; }
+.value { font-size:.8rem; color:var(--muted); font-variant-numeric:tabular-nums; }
+input[type=range] { width:100%; accent-color:var(--green); cursor:pointer; margin:6px 0 0; }
+input[type=range]:disabled { opacity:.3; cursor:not-allowed; }
+.help { font-size:.76rem; line-height:1.5; color:var(--muted); margin:4px 0 0; }
+.frame-area { display:flex; justify-content:center; align-items:center; padding:22px 10px; background:var(--bg); border:1px dashed var(--line); }
+.preview { position:relative; width:200px; height:150px; max-width:200px; max-height:150px; overflow:hidden; background:white; outline:1px solid var(--line); touch-action:none; cursor:grab; user-select:none; box-shadow:3px 3px 0 rgb(37 43 39 / 9%); }
+.preview.dragging { cursor:grabbing; }
+.preview img { position:absolute; display:block; max-width:none !important; max-height:none !important; height:auto; margin:0; pointer-events:none; filter:grayscale(1); }
+.preview.colour img, .preview:hover img { filter:none; }
+.preview:after { content:""; position:absolute; inset:0; pointer-events:none; }
+.centered { text-align:center; }
+.preview-caption { margin:13px 0 2px; font-size:.8rem; color:var(--green); }
+.frame-note { font-size:.72rem; color:var(--muted); margin:3px 0; }
+.source { display:block; max-width:100%; max-height:195px; width:auto; height:auto; object-fit:contain; background:#fff; margin:0 auto; border:1px solid var(--line); }
+.meta { font-size:.76rem; color:var(--muted); margin:10px 0; }
+.actions { display:flex; flex-wrap:wrap; align-items:center; gap:9px; margin-top:14px; }
+.check { display:inline-flex; align-items:center; gap:7px; font-weight:400; margin:0; }
+.check input { accent-color:var(--green); }
+pre,textarea { white-space:pre-wrap; overflow-wrap:anywhere; font: .81rem/1.6 ui-monospace,SFMono-Regular,monospace; background:#f0f1ed; border:1px solid var(--line); border-radius:2px; }
+textarea { width:100%; padding:12px; resize:vertical; min-height:135px; color:var(--ink); }
+button.primary { background:var(--green); color:white; border-color:var(--green); }
+button.primary:hover { background:var(--hover); }
+#message { min-height:1.4em; color:var(--muted); font-size:.75rem; }
+.notes { font-size:.83rem; color:var(--muted); }
+.notes strong{color:var(--ink)}
+.small-head { margin-top:0; font-size:.8rem; font-weight:700; }
+</style>
+</head>
+<body>
+<main>
+<h1>:: Thumbnail crop editor</h1>
+<p class="lede">Test crops for a 200 × 150px portfolio thumbnail. Zoom and drag to choose a detail; the full image stays unchanged in the gallery. This is a local development utility, not part of your published Hugo site.</p>
+<section class="card">
+<div class="grid">
+<div>
+<h2>01. Choose an image</h2>
+<div class="field"><label for="sample">Existing project images</label>
+<select id="sample"><option value="">Loading project images…</option></select></div>
+<div class="field"><label for="upload">Or open an image from your computer</label><input id="upload" type="file" accept="image/*"><p class="help">Local files stay in your browser; nothing is uploaded. The project image list refreshes when you open this editor.</p></div>
+<div><p class="small-head">Full source image</p><img id="source" class="source" alt="Full source image"><p id="source-meta" class="meta">Loading image…</p></div>
+</div>
+<div>
+<h2>02. Adjust the thumbnail</h2>
+<div class="frame-area"><div id="preview" class="preview" role="img" aria-label="Crop preview; use the sliders or drag to reposition"><img id="crop-image" alt=""></div></div>
+<p class="centered preview-caption">[View image gallery] · 1 / 2</p>
+<p class="centered frame-note">200 × 150px · hover for colour · drag to reposition</p>
+<div class="field"><div class="field-heading"><label for="zoom">Zoom</label><span class="value" id="zoom-value"></span></div><input type="range" id="zoom" min="1" max="3" value="1" step="0.01"><p class="help" id="zoom-help"></p></div>
+<div class="field"><div class="field-heading"><label for="x">Horizontal position</label><span class="value" id="x-value"></span></div><input type="range" id="x" min="0" max="100" value="50" step="1"><p class="help" id="x-help"></p></div>
+<div class="field"><div class="field-heading"><label for="y">Vertical position</label><span class="value" id="y-value"></span></div><input type="range" id="y" min="0" max="100" value="50" step="1"><p class="help" id="y-help"></p></div>
+<div class="actions"><button id="reset">Reset crop</button><label class="check"><input id="colour" type="checkbox"> Always show colour</label></div>
+</div>
+</div>
+</section>
+<section class="card"><h2>03. Copy into gallery metadata</h2>
+<p class="notes">Add the <code>thumbnail</code> block to the corresponding entry in your project's <code>gallery</code> list. The values describe the crop, not the dimensions of the full image. The production gallery now applies these values to thumbnail previews. Copy them into the matching image entry in your front matter.</p>
+<textarea id="yaml" readonly spellcheck="false" aria-label="Generated YAML snippet"></textarea>
+<div class="actions"><button class="primary" id="copy">Copy YAML</button><span id="message" role="status" aria-live="polite"></span></div>
+</section>
+<section class="card notes"><h2>How the controls work</h2>
+<p><strong>1× means fill the 4:3 frame with the smallest possible crop</strong> (equivalent to CSS <code>object-fit: cover</code>). For a wide image, the sides are already cropped; for a tall image, the top and bottom are cropped. Higher zoom enlarges the image further and reveals less of it.</p>
+<p>The zoom limit is the smaller of 3× and the magnification that would display the source at native pixel size. If an image has to be enlarged even at 1× to cover the frame, no further zoom is offered. Position sliders are disabled whenever the image exactly fills that axis. On drag, movement stops at the source image edges, so there are no empty borders.</p>
+</section>
+</main>
+<script>
+(() => {
+  'use strict';
+  const W=200,H=150,ZOOM_CAP=3;
+  const $=id=>document.getElementById(id);
+  const sample=$('sample'), upload=$('upload'), source=$('source'), img=$('crop-image');
+  const preview=$('preview'), zoomEl=$('zoom'), xEl=$('x'), yEl=$('y');
+  const yaml=$('yaml'), status=$('message');
+  const state={width:0,height:0,zoom:1,x:50,y:50,maxZoom:1,fit:1,filename:'',blobUrl:null};
+  const clamp=(n,lo,hi)=>Math.max(lo,Math.min(hi,n));
+  const fmt=n=>Number(n.toFixed(2)).toString();
+  let loadId=0;
+  function metrics(){
+    const scale=state.fit*state.zoom;
+    const dw=state.width*scale,dh=state.height*scale;
+    return {dw,dh,ox:Math.max(0,dw-W),oy:Math.max(0,dh-H)};
+  }
+  function draw(){
+    if(!state.width)return;
+    state.zoom=clamp(state.zoom,1,state.maxZoom);
+    const m=metrics();
+    if(m.ox<.02) state.x=50;
+    if(m.oy<.02) state.y=50;
+    img.style.width=`${m.dw}px`;
+    img.style.height=`${m.dh}px`;
+    img.style.left=`${-m.ox*state.x/100}px`;
+    img.style.top=`${-m.oy*state.y/100}px`;
+    zoomEl.max=String(state.maxZoom);zoomEl.value=String(state.zoom);
+    zoomEl.disabled=state.maxZoom<=1.001;
+    xEl.value=String(state.x);xEl.disabled=m.ox<.02;
+    yEl.value=String(state.y);yEl.disabled=m.oy<.02;
+    $('zoom-value').textContent=`${fmt(state.zoom)}× / ${fmt(state.maxZoom)}×`;
+    $('zoom-help').textContent=state.maxZoom<=1.001?'Further zoom would exceed native image resolution.':'Maximum is limited by 3× or native image resolution, whichever is lower.';
+    $('x-value').textContent=`${Math.round(state.x)}%`;
+    $('y-value').textContent=`${Math.round(state.y)}%`;
+    $('x-help').textContent=xEl.disabled?'Locked: image fits the frame width.':'0% = left edge; 100% = right edge.';
+    $('y-help').textContent=yEl.disabled?'Locked: image fits the frame height.':'0% = top edge; 100% = bottom edge.';
+    yaml.value=`thumbnail:\n  zoom: ${fmt(state.zoom)}\n  x: ${Math.round(state.x)}\n  y: ${Math.round(state.y)}`;
+    $('source-meta').textContent=`${state.filename} · ${state.width} × ${state.height}px · source-to-frame scale ${fmt(state.fit)}×`;
+  }
+  async function loadImage(url, filename){
+    const request=++loadId;
+    status.textContent='';
+    const test=new Image();
+    test.onload=()=>{
+      if(request!==loadId)return;
+      state.filename=filename;
+      state.width=test.naturalWidth;state.height=test.naturalHeight;
+      state.fit=Math.max(W/state.width,H/state.height);
+      state.maxZoom=Math.max(1,Math.min(ZOOM_CAP,1/state.fit));
+      state.zoom=1;state.x=50;state.y=50;
+      source.src=url;img.src=url;draw();
+    };
+    test.onerror=()=>{if(request===loadId){status.textContent='Unable to load that image.';$('source-meta').textContent='Image could not be opened.';}};
+    test.src=url;
+  }
+  sample.addEventListener('change',()=>{
+    upload.value='';
+    if(state.blobUrl){URL.revokeObjectURL(state.blobUrl);state.blobUrl=null;}
+    const opt=sample.selectedOptions[0];
+    if(opt?.value) loadImage(opt.value,opt.dataset.filename);
+  });
+  upload.addEventListener('change',()=>{
+    const file=upload.files?.[0];if(!file)return;
+    if(state.blobUrl) URL.revokeObjectURL(state.blobUrl);
+    state.blobUrl=URL.createObjectURL(file);loadImage(state.blobUrl,file.name);
+  });
+  zoomEl.addEventListener('input',()=>{state.zoom=Number(zoomEl.value);draw();});
+  xEl.addEventListener('input',()=>{state.x=Number(xEl.value);draw();});
+  yEl.addEventListener('input',()=>{state.y=Number(yEl.value);draw();});
+  $('reset').addEventListener('click',()=>{state.zoom=1;state.x=50;state.y=50;draw();});
+  $('colour').addEventListener('change',e=>{preview.classList.toggle('colour',e.target.checked);});
+  let drag=null;
+  preview.addEventListener('pointerdown',e=>{
+    if(!state.width||e.button!==0)return;
+    const m=metrics();if(m.ox<.02&&m.oy<.02)return;
+    drag={id:e.pointerId,startX:e.clientX,startY:e.clientY,x:state.x,y:state.y,ox:m.ox,oy:m.oy};
+    preview.classList.add('dragging');preview.setPointerCapture(e.pointerId);
+  });
+  preview.addEventListener('pointermove',e=>{
+    if(!drag||e.pointerId!==drag.id)return;
+    if(drag.ox>=.02)state.x=clamp(drag.x-(e.clientX-drag.startX)*100/drag.ox,0,100);
+    if(drag.oy>=.02)state.y=clamp(drag.y-(e.clientY-drag.startY)*100/drag.oy,0,100);
+    draw();
+  });
+  const endDrag=()=>{drag=null;preview.classList.remove('dragging');};
+  preview.addEventListener('pointerup',endDrag);
+  preview.addEventListener('pointercancel',endDrag);
+  preview.addEventListener('lostpointercapture',endDrag);
+  $('copy').addEventListener('click',async()=>{
+    try { await navigator.clipboard.writeText(yaml.value);status.textContent='Copied.'; }
+    catch { yaml.focus();yaml.select();status.textContent='Select the text above and copy it (Cmd/Ctrl+C).'; }
+  });
+  async function loadProjectImages() {
+    try {
+      const response = await fetch('/api/images', { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const files = await response.json();
+      sample.replaceChildren();
+      for (const item of files) {
+        const opt = document.createElement('option');
+        opt.value = item.url;
+        opt.dataset.filename = item.filename;
+        opt.textContent = `${item.project} — ${item.filename}`;
+        sample.append(opt);
+      }
+      if (files.length) {
+        const opt = sample.selectedOptions[0];
+        loadImage(opt.value, opt.dataset.filename);
+      } else {
+        const opt = document.createElement('option');
+        opt.textContent = 'No images found in static/assets/projects/';
+        opt.value = '';
+        sample.append(opt);
+        $('source-meta').textContent = 'Choose an image using the file picker.';
+      }
+    } catch (error) {
+      sample.replaceChildren();
+      const opt = document.createElement('option');
+      opt.textContent = 'Cannot load repository images';
+      opt.value = '';
+      sample.append(opt);
+      status.textContent = 'Start this editor with: python3 tools/thumbnail-editor/serve.py';
+      $('source-meta').textContent = 'The image browser needs the local editor server.';
+    }
+  }
+  loadProjectImages();
+})();
+</script>
+</body>
+</html>

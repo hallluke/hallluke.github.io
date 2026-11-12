@@ -30,11 +30,18 @@
     {{ end }}
   {{ end }}
   {{ $featured := index $images $selected }}
+  {{ $crop := $featured.thumbnail | default (dict) }}
   {{ $preview := printf "assets/projects/%s/%s" $project (path.Base $featured.src) | relURL }}
   <div class="project-gallery-link{{ if eq $style "text" }} project-gallery-link--text{{ end }}">
     <button type="button" class="gallery-open" data-gallery-index="{{ $selected }}" aria-haspopup="dialog" aria-label="{{ $label }} — {{ $page.Title }} (image {{ add $selected 1 }} of {{ len $images }})">
       {{ if ne $style "text" }}
-        <img src="{{ $preview }}" alt="" width="200" height="150" loading="lazy" />
+        {{/* A 4:3 viewport; JavaScript applies this image's optional thumbnail crop. */}}
+        <span class="gallery-thumbnail-frame">
+          <img src="{{ $preview }}" alt="" width="200" height="150" loading="lazy"
+            data-thumb-zoom="{{ $crop.zoom | default 1 }}"
+            data-thumb-x="{{ $crop.x | default 50 }}"
+            data-thumb-y="{{ $crop.y | default 50 }}" />
+        </span>
       {{ end }}
       <span class="gallery-trigger-line">
         <span class="gallery-trigger-label"><span class="gallery-trigger-text">{{ $label }}</span></span>

@@ -202,3 +202,46 @@
     });
   }
 })();
+
+
+// Thumbnail crops use the same cover/zoom/position maths as the local editor.
+// This code affects only shortcode previews, never the lightbox's full images.
+(() => {
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const readNumber = (value, fallback) => {
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : fallback;
+  };
+
+  document.querySelectorAll(".gallery-thumbnail-frame img").forEach((img) => {
+    const frame = img.closest(".gallery-thumbnail-frame");
+    if (!frame) return;
+    const render = () => {
+      if (!img.naturalWidth || !img.naturalHeight) return;
+      const width = frame.clientWidth;
+      const height = frame.clientHeight;
+      if (!width || !height) return;
+
+      const fit = Math.max(width / img.naturalWidth, height / img.naturalHeight);
+      // At zoom=1 the image covers the frame; never exceed native pixel size.
+      const maxZoom = Math.max(1, Math.min(3, 1 / fit));
+      const zoom = clamp(readNumber(img.dataset.thumbZoom, 1), 1, maxZoom);
+      const x = clamp(readNumber(img.dataset.thumbX, 50), 0, 100);
+      const y = clamp(readNumber(img.dataset.thumbY, 50), 0, 100);
+      const displayedWidth = img.naturalWidth * fit * zoom;
+      const displayedHeight = img.naturalHeight * fit * zoom;
+      const overflowX = Math.max(0, displayedWidth - width);
+      const overflowY = Math.max(0, displayedHeight - height);
+
+      img.style.width = `${displayedWidth}px`;
+      img.style.height = `${displayedHeight}px`;
+      img.style.left = `${-overflowX * x / 100}px`;
+      img.style.top = `${-overflowY * y / 100}px`;
+      img.style.objectFit = "fill";
+    };
+    img.addEventListener("load", render);
+    if (img.complete && img.naturalWidth) render();
+    // Recompute if the thumbnail frame changes size due to responsive layout.
+    if ("ResizeObserver" in window) new ResizeObserver(render).observe(frame);
+  });
+})();
