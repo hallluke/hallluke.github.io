@@ -19,10 +19,16 @@ italicTypes:
 reading:
   label: "Reading"
   items:
+    - name: "The Great When"
+      type: book
+      by: "Alan Moore"
+      date: "2026-11-12"
+      url: "https://openlibrary.org/works/OL37888265W/"
+
     - name: "The Wax Child"
       type: book
       by: "Olga Ravn"
-      date: "2026-11-12"
+      date: "2026-11-11"
       url: "https://openlibrary.org/works/OL42884743W/"
 
     - name: "A Room of One's Own"
@@ -46,6 +52,12 @@ reading:
 listening:
   label: "Listening"
   items:
+    - name: "No Good"
+      type: song
+      by: "Blank Atlas"
+      date: "2026-11-05"
+      url: "https://blankatlas.bandcamp.com/track/no-good"
+
     - name: "Numberphile"
       type: podcast
       date: "2026-11-12"
@@ -74,8 +86,8 @@ viewing:
     - name: "Siqian Li"
       type: gig
       at: "St. George's"
-      date: "2026-11-05"
-      url: "https://www.stgeorgesbristol.co.uk/whats-on/ltc-siqian-li//"
+      date: "2026-11-12"
+      url: "https://www.stgeorgesbristol.co.uk/whats-on/ltc-siqian-li/"
 
     - name: "Dark Tales"
       type: exhibition

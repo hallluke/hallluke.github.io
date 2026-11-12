@@ -16,18 +16,18 @@ gallery:
   - src: "single-impression.png"
     alt: "A small character assembled from Unicode symbols, displayed on a lined card with a serial number"
     caption: "An individual lil buddy, saying hello"
-    featured: true
     thumbnail:
-      zoom: 2.28
-      x: 13
-      y: 51
+      zoom: 1.71
+      x: 45
+      y: 48
   - src: "group-portrait.png"
     alt: "Nine different Unicode characters arranged in a three-by-three grid of numbered cards"
     caption: "A collection of randomly generated characters"
+    featured: true
     thumbnail:
-      zoom: 2.43
-      x: 100
-      y: 68
+      zoom: 2
+      x: 19
+      y: 24
   - src: "in-motion.png"
     alt: "Two Unicode characters walking along a lined strip, with controls to generate new walkers"
     caption: "Some smol frens taking a walk"

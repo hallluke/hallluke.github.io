@@ -30,7 +30,6 @@
   overflow: hidden;
   border-radius: 2px;
   outline: 1px solid var(--site-border);
-  outline-offset: -1px;
   box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
 }
 .project-gallery-link .gallery-thumbnail-frame img {
