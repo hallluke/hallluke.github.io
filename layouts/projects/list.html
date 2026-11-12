@@ -10,20 +10,26 @@
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           </h2>
         </div>
-        {{ with .Params.description }}
-          <p>{{ . }}
-            {{ end }}
-            {{ $projectTitle := .Title }}
-            {{ $linkLabel := default "View the project" .Params.project_link_label }}
-            {{ with .Params.project_url_slug }}
-            {{ $projectURL := printf "%s/" . | absURL }}
-            <br />
-            <span class="project-external"><a href="{{ $projectURL }}"
+
+        {{ $description := .Params.description }}
+        {{ $slug := .Params.project_url_slug }}
+        {{ $projectTitle := .Title }}
+        {{ $linkLabel := .Params.project_link_label | default "View the project" }}
+
+        {{/* Either field may be absent; always open and close the paragraph together. */}}
+        {{ if or $description $slug }}
+          <p>
+            {{- with $description }}{{ . }}{{ end }}
+            {{- with $slug }}
+              {{- if $description }}<br />{{ end }}
+              {{- $projectURL := printf "%s/" . | absURL }}
+              <span class="project-external">
+                <a href="{{ $projectURL }}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
-                {{ $linkLabel }}
-              </a></span>
+                  aria-label="Visit {{ $projectTitle }} (opens in a new tab)">{{ $linkLabel }}</a>
+              </span>
+            {{- end }}
           </p>
         {{ end }}
       </article>

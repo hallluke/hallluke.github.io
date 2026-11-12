@@ -1,5 +1,5 @@
 /* Shared project gallery styling. */
-/* Preview replaces the text trigger; the dialog itself is unchanged. */
+/* The shortcode supports thumbnail and text triggers for one shared dialog. */
 .project-gallery-link {
   margin: 0 0 1rem;
   display: flex;
