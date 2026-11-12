@@ -39,9 +39,9 @@ gallery:
     alt: "Three Unicode characters standing on a winners' podium marked first, second and third"
     caption: "Everyone's a winner!"
     thumbnail:
-      zoom: 2.12
-      x: 50
-      y: 25
+      zoom: 1.68
+      x: 4
+      y: 22
 ---
 
 This project began as a social media bot that periodically posted a tiny Unicode friend, or replied with one when mentioned. Each little buddy was assembled from different combinations of symbols, producing a variety of faces, bodies and arms.
