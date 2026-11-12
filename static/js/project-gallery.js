@@ -26,6 +26,7 @@
     let panY = 0;
     let drag = null;
     let suppressClick = false;
+    let imageRequest = 0;
 
     // Only offer native-resolution zoom when the fitted image is below 70%.
     function canZoom() {
@@ -52,7 +53,6 @@
       viewport.classList.toggle("is-zoomed", zoom > 1);
       const zoomAvailable = canZoom();
       viewport.style.cursor = zoom > 1 ? "grab" : zoomAvailable ? "zoom-in" : "default";
-      viewport.setAttribute("title", zoom > 1 ? "Click to fit image" : zoomAvailable ? "Click to view at original size" : "Image is displayed at a readable size");
     }
 
     function resetZoom() {
@@ -123,9 +123,10 @@
 
     // Keep the dialog only as wide as the displayed image (+ its 16px padding).
     // Height is reserved for the toolbar, caption, controls and dialog margins.
-    function sizeImage() {
-      const naturalWidth = image.naturalWidth || 960;
-      const naturalHeight = image.naturalHeight || 640;
+    function sizeImage(naturalWidth, naturalHeight) {
+      // Use the dimensions of the image we have JUST loaded, not the dimensions
+      // left in the visible <img> by the previous slide.
+      if (!naturalWidth || !naturalHeight) return;
       const outerGap = window.innerWidth <= 600 ? 12 : 16;
       const paddingAndBorders = 34; // 16px padding each side + 1px borders.
       const maxWidth = Math.max(1, Math.min(960, window.innerWidth - outerGap * 2 - paddingAndBorders));
@@ -133,25 +134,48 @@
       const scale = Math.min(maxWidth / naturalWidth, maxHeight / naturalHeight, 1);
       const displayWidth = Math.floor(naturalWidth * scale);
       const displayHeight = Math.floor(naturalHeight * scale);
+      // Set the containing dialog width first: otherwise the viewport can be
+      // temporarily constrained by the previous (narrower) image, causing
+      // applyZoom() to write an incorrect image width and height.
+      dialog.style.width = `${displayWidth + paddingAndBorders}px`;
       viewport.style.width = `${displayWidth}px`;
       viewport.style.height = `${displayHeight}px`;
       resetZoom();
-      dialog.style.width = `${displayWidth + paddingAndBorders}px`;
     }
-    image.addEventListener("load", sizeImage);
     window.addEventListener("resize", () => {
-      if (dialog.open) sizeImage();
+      if (dialog.open && image.complete && image.naturalWidth) {
+        sizeImage(image.naturalWidth, image.naturalHeight);
+      }
     });
 
     function show(indexToShow) {
-      resetZoom();
+      const request = ++imageRequest;
       index = (indexToShow + images.length) % images.length;
-      image.src = images[index].src;
-      image.alt = images[index].alt;
-      caption.textContent = images[index].caption;
-      originalLink.href = images[index].src;
-      counter.textContent = `${index + 1} / ${images.length}`;
-      sizeImage();
+      const slide = images[index];
+
+      // Load off-screen first. The current slide remains visible until the
+      // replacement is genuinely ready; no stale dimensions or blank viewer.
+      const incoming = new Image();
+      incoming.onload = () => {
+        // Rapid Previous/Next clicks can finish loading out of order.
+        if (request !== imageRequest || !dialog.open) return;
+
+        image.src = incoming.src;
+        image.alt = slide.alt || "";
+        viewport.title = image.alt;
+        caption.textContent = slide.caption || "";
+        originalLink.href = slide.src;
+        counter.textContent = `${index + 1} / ${images.length}`;
+        sizeImage(incoming.naturalWidth, incoming.naturalHeight);
+        image.style.visibility = "visible";
+      };
+      incoming.onerror = () => {
+        if (request !== imageRequest || !dialog.open) return;
+        // Keep the previous image visible rather than leaving an empty dialog.
+        caption.textContent = "Image could not be loaded.";
+        console.warn("Could not load gallery image", slide.src);
+      };
+      incoming.src = slide.src;
     }
 
     // All preview and text triggers use the same modal and start at their image.
@@ -161,6 +185,10 @@
         dialog.showModal();
         show(Number.isInteger(requestedIndex) && requestedIndex >= 0 && requestedIndex < images.length ? requestedIndex : 0);
       });
+    });
+    dialog.addEventListener("close", () => {
+      // Ignore images that finish loading after the viewer has closed.
+      imageRequest++;
     });
     component.querySelector(".gallery-close").addEventListener("click", () => dialog.close());
     component.querySelector(".gallery-prev").addEventListener("click", () => show(index - 1));

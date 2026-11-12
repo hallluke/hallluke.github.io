@@ -10,14 +10,14 @@
       {{ $slides = $slides | append (dict "src" $src "alt" (.alt | default "") "caption" (.caption | default "")) }}
     {{ end }}
     <div class="project-gallery-viewer">
-      <dialog class="project-gallery" aria-label="{{ $page.Title }} screenshots">
+      <dialog class="project-gallery" aria-label="{{ $page.Title }} image gallery">
         <div class="project-gallery__toolbar">
           <span class="gallery-counter" aria-live="polite"></span>
           <button type="button" class="gallery-close" autofocus>Close ×</button>
         </div>
         <figure>
-          <div class="gallery-viewport" aria-label="Screenshot viewer: click to zoom when available; drag to pan when enlarged">
-            <img class="gallery-image" alt="" width="1200" height="797" draggable="false" />
+          <div class="gallery-viewport" aria-label="Image viewer: click to zoom when available; drag to pan when enlarged">
+            <img class="gallery-image" alt="" draggable="false" />
           </div>
           <figcaption class="gallery-caption"></figcaption>
         </figure>
