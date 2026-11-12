@@ -19,6 +19,12 @@ italicTypes:
 reading:
   label: "Reading"
   items:
+    - name: "The Wax Child"
+      type: book
+      by: "Olga Ravn"
+      date: "2026-11-12"
+      url: "https://openlibrary.org/works/OL42884743W/"
+
     - name: "A Room of One's Own"
       type: book
       by: "Virginia Woolf"
@@ -40,6 +46,17 @@ reading:
 listening:
   label: "Listening"
   items:
+    - name: "Numberphile"
+      type: podcast
+      date: "2026-11-12"
+      url: "https://www.numberphile.com/podcast"
+
+    - name: "Future Nausea"
+      type: album
+      by: "Spanish Love Songs"
+      date: "2026-11-06"
+      url: "https://spanishlovesongs.bandcamp.com/album/future-nausea"
+
     - name: "Corner Piece"
       type: podcast
       date: "2026-11-05"
@@ -51,15 +68,14 @@ listening:
       date: "2026-11-05"
       url: "https://pennameuk.bandcamp.com/album/still-here-somehow"
 
-    - name: "Future Nausea" 
-      type: album
-      by: "Spanish Love Songs"
-      date: "2026-11-06"
-      url: "https://spanishlovesongs.bandcamp.com/album/future-nausea"
-
 viewing:
   label: "Seeing"
   items:
+    - name: "Siqian Li"
+      type: gig
+      at: "St. George's"
+      date: "2026-11-05"
+      url: "https://www.stgeorgesbristol.co.uk/whats-on/ltc-siqian-li//"
 
     - name: "Dark Tales"
       type: exhibition
@@ -81,76 +97,76 @@ viewing:
 # Examples to copy when populating the list
 
 _examples:
-    book:
-      name: "Book Title"
-      type: book
-      by: "Author Name"
-      date: "YYYY-MM-DD"
+  book:
+    name: "Book Title"
+    type: book
+    by: "Author Name"
+    date: "YYYY-MM-DD"
 
-    album:
-      name: "Album Title"
-      type: album
-      by: "Artist or Band"
-      date: "YYYY-MM-DD"
+  album:
+    name: "Album Title"
+    type: album
+    by: "Artist or Band"
+    date: "YYYY-MM-DD"
 
-    song:
-      name: "Song Title"
-      type: song
-      by: "Artist or Band"
-      date: "YYYY-MM-DD"
+  song:
+    name: "Song Title"
+    type: song
+    by: "Artist or Band"
+    date: "YYYY-MM-DD"
 
-    podcast:
-      name: "Podcast Name"
-      type: podcast
-      date: "YYYY-MM-DD"
+  podcast:
+    name: "Podcast Name"
+    type: podcast
+    date: "YYYY-MM-DD"
 
-    podcast_episode:
-      name: "Episode Title"
-      type: podcast_episode
-      from: "Podcast Name"
-      date: "YYYY-MM-DD"
+  podcast_episode:
+    name: "Episode Title"
+    type: podcast_episode
+    from: "Podcast Name"
+    date: "YYYY-MM-DD"
 
-    band:
-      name: "Band Name"
-      type: band
-      date: "YYYY-MM-DD"
+  band:
+    name: "Band Name"
+    type: band
+    date: "YYYY-MM-DD"
 
-    gig:
-      name: "Performer or Band"
-      type: gig
-      at: "Venue Name"
-      date: "YYYY-MM-DD"
+  gig:
+    name: "Performer or Band"
+    type: gig
+    at: "Venue Name"
+    date: "YYYY-MM-DD"
 
-    exhibition:
-      name: "Exhibition Title"
-      type: exhibition
-      by: "Artist Name"
-      at: "Gallery or Venue"
-      date: "YYYY-MM-DD"
+  exhibition:
+    name: "Exhibition Title"
+    type: exhibition
+    by: "Artist Name"
+    at: "Gallery or Venue"
+    date: "YYYY-MM-DD"
 
-    film:
-      name: "Film Title"
-      type: film
-      by: "Director Name"
-      at: "Cinema or Venue"
-      date: "YYYY-MM-DD"
+  film:
+    name: "Film Title"
+    type: film
+    by: "Director Name"
+    at: "Cinema or Venue"
+    date: "YYYY-MM-DD"
 
-    theatre:
-      name: "Production Title"
-      type: theatre
-      by: "Company or Writer"
-      at: "Theatre or Venue"
-      date: "YYYY-MM-DD"
+  theatre:
+    name: "Production Title"
+    type: theatre
+    by: "Company or Writer"
+    at: "Theatre or Venue"
+    date: "YYYY-MM-DD"
 
-    live_show:
-      name: "Show Name"
-      type: live_show
-      by: "Performer or Company"
-      at: "Venue Name"
-      date: "YYYY-MM-DD"
+  live_show:
+    name: "Show Name"
+    type: live_show
+    by: "Performer or Company"
+    at: "Venue Name"
+    date: "YYYY-MM-DD"
 
-    museum:
-      name: "Museum Name"
-      type: museum
-      at: "Location"
-      date: "YYYY-MM-DD"
+  museum:
+    name: "Museum Name"
+    type: museum
+    at: "Location"
+    date: "YYYY-MM-DD"

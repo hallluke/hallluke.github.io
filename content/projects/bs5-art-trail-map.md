@@ -26,7 +26,7 @@ gallery:
 
 I made this alternative map before visiting the BS5 Art Trail because I found the official map difficult to use. Large markers obscured nearby streets, locations were grouped together even when zoomed in, and viewing artist information meant leaving the map. I wanted something that made it easier to navigate between venues and learn about the exhibitors.
 
-{{< project-gallery label="View map area" >}}
+{{< project-gallery label="View map overview" >}}
 
 Starting with the PDF brochure, I used Python to extract and clean the event listings, grouping artists by venue and parsing the addresses. These were then converted into map coordinates using GeoPy's Nominatim service and OpenStreetMap data. Some locations required manual checking and correction. With the location data prepared, I used Folium and Leaflet to create an interactive map with smaller, colour-coded markers, filters for venue types and pop-ups showing artist details and opening times.
 
