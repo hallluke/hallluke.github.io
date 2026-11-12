@@ -75,6 +75,11 @@ Articles */}} {{ if .IsPage }}
   async
   src="https://gc.zgo.at/count.js">
 </script>
-{{ partialCached "favicon.html" . }}
+{{ partialCached "head/favicon.html" . }}
 {{ partialCached "head/css.html" . }}
 <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+
+{{/* Gallery styles are loaded only on pages with gallery metadata. */}}
+{{ with .Params.gallery }}
+<link rel="stylesheet" href="{{ "css/project-gallery.css" | relURL }}">
+{{ end }}

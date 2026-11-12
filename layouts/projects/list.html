@@ -18,14 +18,12 @@
             {{ with .Params.project_url_slug }}
             {{ $projectURL := printf "%s/" . | absURL }}
             <br />
-            <span class="project-external">
-              <a href="{{ $projectURL }}"
+            <span class="project-external"><a href="{{ $projectURL }}"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Visit {{ $projectTitle }} (opens in a new tab)">
                 {{ $linkLabel }}
-              </a>
-            </span>
+              </a></span>
           </p>
         {{ end }}
       </article>

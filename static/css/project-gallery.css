@@ -1,0 +1,204 @@
+/* Shared project gallery styling. */
+/* Preview replaces the text trigger; the dialog itself is unchanged. */
+.project-gallery-link {
+  margin: 0 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+.project-gallery-link button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--site-accent);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.project-gallery-link img {
+  margin: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--site-border);
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
+  filter: grayscale(1);
+}
+.project-gallery-link button:hover img,
+.project-gallery-link button:focus-visible img,
+.project-gallery-link button:active img {
+  filter: grayscale(0);
+}
+.project-gallery-link button:hover,
+.project-gallery-link button:focus-visible,
+.project-gallery-link button:active {
+  color: var(--site-accent-hover);
+}
+/* One inline row: [linked label] · muted position counter. */
+.gallery-trigger-line {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 1.4;
+}
+/* The existing bracket pseudo-elements live on this un-underlined wrapper. */
+.gallery-trigger-label {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--site-text);
+  text-decoration: none;
+}
+/* Only the actual link words are underlined, never the brackets. */
+.gallery-trigger-text {
+  color: var(--site-accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.project-gallery-link button:hover .gallery-trigger-text,
+.project-gallery-link button:focus-visible .gallery-trigger-text,
+.project-gallery-link button:active .gallery-trigger-text {
+  color: var(--site-accent-hover);
+  text-decoration-thickness: 2px;
+}
+.gallery-trigger-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+.gallery-trigger-separator {
+  color: var(--site-text);
+}
+.gallery-trigger-count {
+  color: var(--site-muted);
+}
+
+.project-gallery {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 16px;
+  overflow: auto;
+  border: 1px solid var(--site-border);
+  border-radius: 2px;
+  background: var(--site-panel);
+  color: var(--site-text);
+  font-family: var(--body-font);
+  box-shadow: none;
+}
+.project-gallery::backdrop {
+  background: rgba(25, 30, 27, 0.65);
+}
+.project-gallery__toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.project-gallery__controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.gallery-prev {
+  justify-self: start;
+}
+.gallery-next {
+  justify-self: end;
+}
+.gallery-original {
+  justify-self: center;
+  white-space: nowrap;
+  font-family: var(--body-font);
+  font-size: 14px;
+  text-decoration: none !important;
+}
+.gallery-counter {
+  color: var(--site-muted);
+  font-size: 14px;
+}
+.project-gallery button {
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: 14px;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--site-accent);
+  text-decoration: none;
+}
+.project-gallery button:hover,
+.project-gallery button:focus-visible,
+.gallery-original:hover,
+.gallery-original:focus-visible {
+  color: var(--site-accent-hover);
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+.project-gallery button:focus-visible,
+.gallery-original:focus-visible,
+.project-gallery-link button:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 3px;
+}
+.project-gallery figure {
+  margin: 12px 0 12px;
+}
+.gallery-viewport {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  cursor: zoom-in;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.gallery-viewport.is-zoomed {
+  cursor: grab;
+  touch-action: none;
+}
+.gallery-viewport.is-dragging {
+  cursor: grabbing;
+}
+.gallery-image {
+  position: absolute;
+  max-width: none;
+  max-height: none;
+  pointer-events: none;
+  display: block;
+  width: auto;
+  height: auto;
+}
+.gallery-caption {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--site-muted);
+}
+@media (max-width: 600px) {
+  .project-gallery {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+}
+/* Text-only triggers retain the same bracket and underline styling. */
+.project-gallery-link--text button {
+  display: inline-block;
+}

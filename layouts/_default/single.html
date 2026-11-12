@@ -3,22 +3,10 @@
 
   {{ .Content }}
 
-  {{ if eq .Section "projects" }}
-    <div class="project-meta">
-      <p class="project-date">
-        Initial release: 
-        <time datetime="{{ .Date.Format "2006-01-02" }}">
-          {{ .Date.Format "2006-01" }}
-        </time>
-      </p>
-      {{ with .Params.status }}
-      <p class="project-status">
-        Status:
-        <span>{{ . | humanize }}</span>
-      </p>
-      {{ end }}
-    {{ end }}
-  </div>
+  {{/* One viewer per project page; shortcodes provide its opening buttons. */}}
+  {{ with .Params.gallery }}
+    {{ partial "project-gallery-viewer.html" $ }}
+  {{ end }}
 
   {{ $slug := .Params.project_url_slug }}
   {{ $label := .Params.project_link_label | default "Visit project" }}
@@ -40,6 +28,23 @@
         Source code
       </a>
     </p>
+  {{ end }}
+
+  {{ if eq .Section "projects" }}
+    <div class="project-meta">
+      <p class="project-date">
+        Initial release: 
+        <time datetime="{{ .Date.Format "2006-01-02" }}">
+          {{ .Date.Format "2006-01" }}
+        </time>
+      </p>
+      {{ with .Params.status }}
+      <p class="project-status">
+        Status:
+        <span>{{ . | humanize }}</span>
+      </p>
+      {{ end }}
+    </div>
   {{ end }}
 
   {{ partial "project-navigation.html" . }}

@@ -1,0 +1,48 @@
+{{/* Render one trigger. The single.html template renders the shared viewer. */}}
+{{ $page := .Page }}
+{{ $images := $page.Params.gallery }}
+{{ $style := .Style | default ($page.Params.gallery_style | default "thumbnail") }}
+{{ $label := .Label | default "View image gallery" }}
+{{ $requested := .Image | default "" }}
+{{ $project := $page.Params.project_url_slug }}
+{{ if and $images $project }}
+  {{/* Choose the first featured image, falling back to the first slide. */}}
+  {{ $selected := 0 }}
+  {{ $foundFeatured := false }}
+  {{ range $i, $item := $images }}
+    {{ if and (not $foundFeatured) $item.featured }}
+      {{ $selected = $i }}
+      {{ $foundFeatured = true }}
+    {{ end }}
+  {{ end }}
+  {{/* An explicit shortcode image overrides the featured choice when found. */}}
+  {{ with $requested }}
+    {{ $found := false }}
+    {{ range $i, $item := $images }}
+      {{ if eq (path.Base $item.src) (path.Base $requested) }}
+        {{ $selected = $i }}
+        {{ $found = true }}
+        {{ break }}
+      {{ end }}
+    {{ end }}
+    {{ if not $found }}
+      {{ warnf "Project gallery image %q not found in gallery for %s" $requested $page.File.Path }}
+    {{ end }}
+  {{ end }}
+  {{ $featured := index $images $selected }}
+  {{ $preview := printf "assets/projects/%s/%s" $project (path.Base $featured.src) | relURL }}
+  <div class="project-gallery-link{{ if eq $style "text" }} project-gallery-link--text{{ end }}">
+    <button type="button" class="gallery-open" data-gallery-index="{{ $selected }}" aria-haspopup="dialog" aria-label="{{ $label }} — {{ $page.Title }} (image {{ add $selected 1 }} of {{ len $images }})">
+      {{ if ne $style "text" }}
+        <img src="{{ $preview }}" alt="" width="200" height="150" loading="lazy" />
+      {{ end }}
+      <span class="gallery-trigger-line">
+        <span class="gallery-trigger-label"><span class="gallery-trigger-text">{{ $label }}</span></span>
+        <span class="gallery-trigger-meta">
+          <span class="gallery-trigger-separator" aria-hidden="true">·</span>
+          <span class="gallery-trigger-count">{{ add $selected 1 }} / {{ len $images }}</span>
+        </span>
+      </span>
+    </button>
+  </div>
+{{ end }}

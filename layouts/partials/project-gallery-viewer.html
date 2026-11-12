@@ -1,0 +1,35 @@
+{{/* One shared modal + JSON collection for every trigger on this page. */}}
+{{ $page := . }}
+{{ $project := $page.Params.project_url_slug }}
+{{ with $page.Params.gallery }}
+  {{ if $project }}
+    {{ $folder := printf "assets/projects/%s" $project }}
+    {{ $slides := slice }}
+    {{ range . }}
+      {{ $src := printf "%s/%s" $folder (path.Base .src) | relURL }}
+      {{ $slides = $slides | append (dict "src" $src "alt" (.alt | default "") "caption" (.caption | default "")) }}
+    {{ end }}
+    <div class="project-gallery-viewer">
+      <dialog class="project-gallery" aria-label="{{ $page.Title }} screenshots">
+        <div class="project-gallery__toolbar">
+          <span class="gallery-counter" aria-live="polite"></span>
+          <button type="button" class="gallery-close" autofocus>Close ×</button>
+        </div>
+        <figure>
+          <div class="gallery-viewport" aria-label="Screenshot viewer: click to zoom when available; drag to pan when enlarged">
+            <img class="gallery-image" alt="" width="1200" height="797" draggable="false" />
+          </div>
+          <figcaption class="gallery-caption"></figcaption>
+        </figure>
+        <div class="project-gallery__controls">
+          <button type="button" class="gallery-prev">← Previous</button>
+          <a class="gallery-original" href="" target="_blank" rel="noopener noreferrer" aria-label="Open original image in a new tab">Original image ↗</a>
+          <button type="button" class="gallery-next">Next →</button>
+        </div>
+      </dialog>
+      {{/* jsonify escapes markup-sensitive characters before embedding JSON. */}}
+      <script type="application/json" class="project-gallery-data">{{ $slides | jsonify | safeJS }}</script>
+    </div>
+    <script src="{{ "js/project-gallery.js" | relURL }}" defer></script>
+  {{ end }}
+{{ end }}

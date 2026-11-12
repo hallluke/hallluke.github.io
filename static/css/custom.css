@@ -470,12 +470,14 @@ p:has(time) {
   color: var(--site-muted);
 }
 
-.project-external::before {
+.project-external::before,
+.gallery-trigger-label::before {
   content: "[";
-  margin-right: 0.4rem;
+  margin-right: 0.2rem;
 }
 
-.project-external::after {
+.project-external::after,
+.gallery-trigger-label::after {
   content: "]";
   margin-left: 0.2rem;
 }
