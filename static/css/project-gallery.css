@@ -32,6 +32,22 @@
   outline: 1px solid var(--site-border);
   box-shadow: 3px 3px 0 color-mix(in oklch, var(--site-text) 9%, transparent);
 }
+/* Subtle green tint over greyscale thumbnails. */
+.gallery-thumbnail-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--site-accent);
+  opacity: 0.12;
+  mix-blend-mode: color;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.project-gallery-link button:hover .gallery-thumbnail-frame::after,
+.project-gallery-link button:focus-visible .gallery-thumbnail-frame::after,
+.project-gallery-link button:active .gallery-thumbnail-frame::after {
+  opacity: 0;
+}
 .project-gallery-link .gallery-thumbnail-frame img {
   position: absolute;
   display: block;
@@ -43,6 +59,7 @@
   max-height: none;
   object-fit: cover; /* Graceful fallback while image loads or if JS is disabled. */
   filter: grayscale(1);
+  transition: filter 0.2s ease;
 }
 .project-gallery-link button:hover img,
 .project-gallery-link button:focus-visible img,
