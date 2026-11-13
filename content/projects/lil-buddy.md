@@ -14,7 +14,7 @@ project_link_label: "Try the generator"
 gallery_style: "thumbnail"
 gallery:
   - src: "single-impression.png"
-    alt: "A small character assembled from Unicode symbols, displayed on a lined card with a serial number"
+    alt: "A small character assembled from Unicode symbols, displayed on a lined card with a serial number."
     caption: "An individual lil buddy, saying hello"
     featured: true
     thumbnail:
@@ -22,21 +22,21 @@ gallery:
       x: 50
       y: 50
   - src: "group-portrait.png"
-    alt: "Nine different Unicode characters arranged in a three-by-three grid of numbered cards"
+    alt: "Nine different Unicode characters arranged in a three-by-three grid of numbered cards."
     caption: "A collection of randomly generated characters"
     thumbnail:
       zoom: 2
       x: 19
       y: 24
   - src: "in-motion.png"
-    alt: "Two Unicode characters walking along a lined strip, with controls to generate new walkers"
+    alt: "Two Unicode characters walking along a lined strip, with controls to generate new walkers."
     caption: "Some smol frens taking a walk"
     thumbnail:
       zoom: 1.61
       x: 73
       y: 44
   - src: "awards-ceremony.png"
-    alt: "Three Unicode characters standing on a winners' podium marked first, second and third"
+    alt: "Three Unicode characters standing on a winners' podium marked first, second and third."
     caption: "Prize ceremony at the first annual Glyphathon"
     thumbnail:
       zoom: 1.84
